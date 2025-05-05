@@ -88,7 +88,8 @@
   <script type="module">
     import { inject } from "https://cdn.jsdelivr.net/npm/@vercel/analytics";
     inject();
-  
+    import { injectSpeedInsights } from '@vercel/speed-insights';
+    injectSpeedInsights();
     // Disable text selection
     document.addEventListener('DOMContentLoaded', () => {
       document.body.style.userSelect = 'none';
