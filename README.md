@@ -1,2 +1,0 @@
-# dagbjorthuangington.github.io
-hi
