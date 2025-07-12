@@ -138,6 +138,27 @@
   </a>
 <p><a href="https://www.google.com" style="color:red;">Click here to exit immediately if you do not accept the terms.</a></p>
 </section>
+  <section id="tc-consent-timer" style="font-weight:bold; color:#b22222; margin: 1em 0;">
+  <p>If you do not accept these terms, exit the site immediately.</p>
+  <p>Time remaining to leave without consent: <span id="countdown">2</span> seconds.</p>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let secondsLeft = 2;
+    const countdownElem = document.getElementById("countdown");
+    const interval = setInterval(() => {
+      secondsLeft--;
+      countdownElem.textContent = secondsLeft;
+      if (secondsLeft <= 0) {
+        clearInterval(interval);
+        // Consent is legally implied here by your T&C language.
+        // Optionally, you can show a confirmation or allow site use from here.
+        countdownElem.textContent = "Time's up — continued use means acceptance.";
+      }
+    }, 1000);
+  });
+</script>
   <section>
     <h2>About the Author</h2>
     <p>
