@@ -85,6 +85,10 @@
   text-indent: 10%;
       margin-bottom:10px;
     }
+    section.tc-consent-timer{
+      font-size: 1rem;
+      font-style: bold;
+    }
 }
   </style>
   <script type="module">
@@ -131,6 +135,15 @@
   <a href="#contact-terms" style="font-weight: bold; text-decoration: underline; color: darkblue;">
     View Terms & Conditions
   </a>
+  <section id="tc-consent-timer">
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        console.warn("⚠️ Continued presence on site after 2 seconds confirms legal acceptance of Terms and Conditions.");
+      }, 2000);
+    });
+  </script>
+</section>
 </section>
   <section>
     <h2>About the Author</h2>
