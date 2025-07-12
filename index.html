@@ -89,7 +89,8 @@
       font-size: 1rem;
       font-style: bold !important;
       color: orange !important;
-      align:center !important;
+      display: flex;
+      align-items:center !important;
     }
 }
   </style>
@@ -137,13 +138,12 @@
   <a href="#contact-terms" style="font-weight: bold; text-decoration: underline; color: darkblue;">
     View Terms & Conditions
   </a>
+  <a href="https://www.google.com" style="color:red;">Click here to exit immediately if you do not accept the terms.</a>
   </section>
-<a href="https://www.google.com" style="color:red;">Click here to exit immediately if you do not accept the terms.</a>
   <section id="tc-consent-timer" style="font-weight:bold; color:#b22222; margin: 1em 0;">
   <p id="exit-warning">If you do not accept these terms, exit the site immediately.</p>
   <p id="timer-text">Time remaining to leave without consent: <span id="countdown">2</span> seconds.</p>
 </section>
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     let secondsLeft = 2;
