@@ -128,20 +128,36 @@
     <p>I don’t know what I am, nor do I know myself well enough to know who I am according to my own understanding from within.</p>
   </header>
 <section id="legal-warning" style="background: #ffdada; padding: 1rem; border: 2px solid red; text-align: center;">
+  <section id="legal-warning" style="background: #ffdada; padding: 1rem; border: 2px solid red; text-align: center;">
   <h1 style="font-size: 1.5rem; color: darkred;">
     ⚠ LEGALLY BINDING TERMS & CONDITIONS – READ BEFORE PROCEEDING ⚠
   </h1>
   <p style="font-weight: bold; color: black;">
-    By accessing or using this website, you unconditionally agree to all terms. If you do not accept, exit within three (3) seconds of reading this.</p>
+    By accessing or using this website, you unconditionally agree to all terms. If you do not accept, exit within three (3) seconds of reading this.
+  </p>
   <a href="#contact-terms" style="font-weight: bold; text-decoration: underline; color: darkblue;">
     View Terms & Conditions
   </a>
-  <button value="Click here to exit immediately if you do not accept the terms." type="button" href="https://www.google.com" style="color:red; margin:1rem; text-decoration: none;"><a href="https://www.google.com" style="color:red; font-weight:bold; margin:5px; text-decoration: none;">Click here to exit immediately if you do not accept the terms.</a></button>
-  </section>
-  <section id="tc-consent-timer" style="font-weight:bold; color:#b22222; text-align:center; padding:2rem 1rem; line-height:2;">
-  <p id="exit-warning" style="margin: 0 0 2rem 0; text-decoration: none;">If you do not accept these terms, exit the site immediately.</p>
-  <p id="timer-text" style="margin: 0; text-decoration: none;">Time remaining to leave without consent: <span id="countdown">2</span> seconds.</p>
+
+  <div style="margin-top: 1.5rem;">
+    <a href="https://www.google.com" style="display:inline-block; background-color: #ffe5e5; padding:0.75rem 1.25rem; color: red; font-weight: bold; border: 2px solid red; text-decoration: none; margin: 0.5rem;">
+      ❌ Click here to exit immediately if you do not accept the terms
+    </a>
+    <a href="#continue" style="display:inline-block; background-color: #ddffdd; padding:0.75rem 1.25rem; color: green; font-weight: bold; border: 2px solid green; text-decoration: none; margin: 0.5rem;">
+      ✅ I accept the terms – continue
+    </a>
+  </div>
 </section>
+
+<section id="tc-consent-timer" style="font-weight:bold; color:#b22222; text-align:center; padding:2rem 1rem; line-height:2;">
+  <p id="exit-warning" style="margin: 0 0 2rem 0;">
+    If you do not accept these terms, exit the site immediately.
+  </p>
+  <p id="timer-text" style="margin: 0;">
+    Time remaining to leave without consent: <span id="countdown">3</span> seconds.
+  </p>
+</section>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     let secondsLeft = 3;
@@ -152,11 +168,10 @@
     const interval = setInterval(() => {
       secondsLeft--;
       countdownElem.textContent = secondsLeft;
+
       if (secondsLeft <= 0) {
         clearInterval(interval);
-        // Remove the first warning sentence
         exitWarning.style.display = 'none';
-        // Replace the second sentence with the single final sentence
         timerText.textContent = "Time's up — continued use means acceptance.";
       }
     }, 1000);
