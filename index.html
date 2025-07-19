@@ -130,7 +130,7 @@
     <h1>Q. Dagbjort Huangington</h1>
     <p>I don’t know what I am, nor do I know myself well enough to know who I am according to my own understanding from within.</p>
   </header>
-  <section id="legal-warning" style="background: #ffdada; padding: 1rem; border: 2px solid red; text-align: center; max-width: 900px; margin: 1rem auto; box-sizing: border-box;">
+  <section id="legal-notice" class="legal-warning" style="background: #ffdada; padding: 1rem; border: 2px solid red; text-align: center; max-width: 900px; margin: 1rem auto; box-sizing: border-box;">
   <h1 style="font-size: 1.5rem; color: darkred;">
     ⚠ LEGALLY BINDING TERMS & CONDITIONS – READ BEFORE PROCEEDING ⚠
   </h1>
@@ -144,11 +144,10 @@
     <a href="https://www.google.com" style="display:inline-block; background-color: #ffe5e5; padding:0.75rem 1.25rem; color: red; font-weight: bold; border: 2px solid red; text-decoration: none; margin: 0.5rem;">
       ❌ Click here to exit immediately if you do not accept the terms
     </a>
-    <a href="#continue" style="display:inline-block; background-color: #ddffdd; padding:0.75rem 1.25rem; color: green; font-weight: bold; border: 2px solid green; text-decoration: none; margin: 0.5rem;">
+    <a href="#continue" id="accept-btn" style="display:inline-block; background-color: #ddffdd; padding:0.75rem 1.25rem; color: green; font-weight: bold; border: 2px solid green; text-decoration: none; margin: 0.5rem;">
       ✅ I accept the terms – continue
     </a>
   </div>
-
   <div id="tc-consent-timer" style="font-weight:bold; color:#b22222; text-align:center; padding:2rem 1rem; line-height:2;">
     <p id="exit-warning" style="margin: 0 0 2rem 0;">
       If you do not accept these terms, exit the site immediately.
@@ -158,27 +157,7 @@
     </p>
   </div>
 </section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    let secondsLeft = 3;
-    const countdownElem = document.getElementById("countdown");
-    const exitWarning = document.getElementById("exit-warning");
-    const timerText = document.getElementById("timer-text");
-
-    const interval = setInterval(() => {
-      secondsLeft--;
-      countdownElem.textContent = secondsLeft;
-
-      if (secondsLeft <= 0) {
-        clearInterval(interval);
-        exitWarning.style.display = 'none';
-        timerText.textContent = "Time's up — continued use means acceptance.";
-      }
-    }, 1000);
-  });
-</script>
-  <section id="continue">
+  <section id="main-content" style="display:none;">
     <h2>About the Author</h2>
     <p>
       I am an author born in Shanghai, hailing from a family with modest economic means. My parents worked for two well-known tech companies, earning a decent living, but not on par with the wealthier individuals in our community. I was born in the year that marked the unveiling of the stone slate, and while I was an extroverted child, I have since transformed into a more reclusive introvert.
@@ -439,7 +418,30 @@ If these Terms are deemed onerous, I reserve sole discretion to streamline proce
     <a href="https://www.twitch.tv/qdagbjorthuangington" target="_blank">Twitch</a>
     <a href="https://linktr.ee/qdagbjorthuangington" target="_blank">Other</a>
   </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let secondsLeft = 3;
+    const countdownElem = document.getElementById("countdown");
+    const exitWarning = document.getElementById("exit-warning");
+    const timerText = document.getElementById("timer-text");
 
+    const interval = setInterval(() => {
+      secondsLeft--;
+      countdownElem.textContent = secondsLeft;
+
+      if (secondsLeft <= 0) {
+        clearInterval(interval);
+        exitWarning.style.display = 'none';
+        timerText.textContent = "Time's up — continued use means acceptance.";
+      }
+    }, 1000);
+
+    document.getElementById('accept-btn').addEventListener('click', () => {
+      document.getElementById('legal-notice').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+    });
+  });
+</script>
   <footer>
     &copy; 2025 Q. Dagbjort Huangington. All rights reserved.
   </footer>
