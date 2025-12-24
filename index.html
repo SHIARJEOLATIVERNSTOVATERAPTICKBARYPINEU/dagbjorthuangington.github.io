@@ -364,28 +364,66 @@ If you do not accept these terms in full, you are required to exit this website 
     <a href="https://linktr.ee/qdagbjorthuangington" target="_blank">Other</a>
   </div>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    let secondsLeft = 3;
-    const countdownElem = document.getElementById("countdown");
-    const exitWarning = document.getElementById("exit-warning");
-    const timerText = document.getElementById("timer-text");
+document.addEventListener("DOMContentLoaded", () => {
+  let secondsLeft = 3;
+  const countdownElem = document.getElementById("countdown");
+  const exitWarning = document.getElementById("exit-warning");
+  const timerText = document.getElementById("timer-text");
+  const acceptBtn = document.getElementById('accept-btn');
+  const legalNotice = document.getElementById('legal-notice');
+  const mainContent = document.getElementById('main-content');
+  const tosSection = document.getElementById("contact-terms"); // TOS section
+  let consentGiven = false;
+  // Countdown timer
+  const interval = setInterval(() => {
+    secondsLeft--;
+    countdownElem.textContent = secondsLeft;
 
-    const interval = setInterval(() => {
-      secondsLeft--;
-      countdownElem.textContent = secondsLeft;
+    if (secondsLeft <= 0) {
+      clearInterval(interval);
+      exitWarning.style.display = 'none';
+      timerText.textContent = "Time's up — continued use means acceptance.";
+    }
+  }, 1000);
 
-      if (secondsLeft <= 0) {
-        clearInterval(interval);
-        exitWarning.style.display = 'none';
-        timerText.textContent = "Time's up — continued use means acceptance.";
-      }
-    }, 1000);
-
-    document.getElementById('accept-btn').addEventListener('click', () => {
-      document.getElementById('legal-notice').style.display = 'none';
-      document.getElementById('main-content').style.display = 'block';
-    });
+  // Explicit click consent
+  acceptBtn.addEventListener('click', () => {
+    recordConsent("click");
   });
+
+  // Scroll-to-consent
+  window.addEventListener("scroll", () => {
+    if (consentGiven) return;
+
+    if (!tosSection) return;
+
+    const tosTop = tosSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    // Check if the user has scrolled to the TOS section AND 3+ seconds have passed
+    if (tosTop < windowHeight && (3 - secondsLeft) >= 3) {
+      recordConsent("scroll");
+    }
+  });
+
+  // Record consent and reveal main content
+  function recordConsent(method) {
+    if (consentGiven) return;
+    consentGiven = true;
+
+    // Hide legal notice
+    legalNotice.style.display = 'none';
+    mainContent.style.display = 'block';
+
+    // Store consent locally
+    localStorage.setItem("tosAccepted", JSON.stringify({
+      method: method,
+      timestamp: new Date().toISOString()
+    }));
+
+    console.log(`Consent recorded via ${method}`);
+  }
+});
 </script>
   <footer>
     &copy; 2025 Q. Dagbjort Huangington. All rights reserved.
