@@ -373,6 +373,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const legalNotice = document.getElementById('legal-notice');
   const mainContent = document.getElementById('main-content');
   const tosSection = document.getElementById("contact-terms"); // TOS section
+
   let consentGiven = false;
 
   // Countdown timer
@@ -395,6 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Scroll-to-consent
   window.addEventListener("scroll", () => {
     if (consentGiven) return;
+
     if (!tosSection) return;
 
     const tosTop = tosSection.getBoundingClientRect().top;
@@ -406,7 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Record consent, reveal main content, and send to server
+  // Record consent and reveal main content
   function recordConsent(method) {
     if (consentGiven) return;
     consentGiven = true;
@@ -415,30 +417,11 @@ document.addEventListener("DOMContentLoaded", () => {
     legalNotice.style.display = 'none';
     mainContent.style.display = 'block';
 
-    // Consent payload
-    const consentData = {
+    // Store consent locally
+    localStorage.setItem("tosAccepted", JSON.stringify({
       method: method,
-      timestamp: new Date().toISOString(),
-      page: window.location.href,
-      tosVersion: "1.0"
-    };
-
-    // Send consent to Vercel serverless function
-    fetch("https://your-vercel-domain.vercel.app/api/record-consent", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(consentData)
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log("Consent successfully recorded on server:", data);
-    })
-    .catch(err => console.error("Error sending consent to server:", err));
-
-    // Optional: still store locally for redundancy
-    localStorage.setItem("tosAccepted", JSON.stringify(consentData));
+      timestamp: new Date().toISOString()
+    }));
 
     console.log(`Consent recorded via ${method}`);
   }
