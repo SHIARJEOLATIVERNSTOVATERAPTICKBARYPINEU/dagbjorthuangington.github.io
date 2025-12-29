@@ -449,6 +449,30 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(`Consent recorded via ${method}`);
   }
 });
+  /**
+ * Toggles fullscreen mode for the entire document.
+ * Must be triggered by a user gesture (click/keydown).
+ */
+async function toggleFullScreen() {
+  try {
+    if (!document.fullscreenElement) {
+      // Enter fullscreen: returns a promise
+      await document.documentElement.requestFullscreen();
+    } else if (document.exitFullscreen) {
+      // Exit fullscreen: returns a promise
+      await document.exitFullscreen();
+    }
+  } catch (err) {
+    // Graceful error handling (e.g., if user blocks fullscreen)
+    console.warn(`Fullscreen transition failed: ${err.message} (${err.name})`);
+  }
+}
+// Attach to the whole document; will trigger on the very first user interaction
+document.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(e => console.error(e));
+    }
+}, { once: true }); // { once: true } ensures it only tries on the first click
 </script>
   <footer>
     &copy; 2025 Q. Dagbjort Huangington. All rights reserved.
