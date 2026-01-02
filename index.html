@@ -364,23 +364,23 @@ Any falsification, evasion, or material omission of required disclosures will re
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   let consentGiven = false;
+  let fullscreenTriggered = false;
 
   // ----- Configuration -----
-  const wordsPerMinute = 200;          // Average reading speed
-  const bottomOffset = 20;             // Pixels from page bottom to trigger scroll consent
+  const wordsPerMinute = 200;
+  const bottomOffset = 20;
 
-  // ----- Helper: bottom-of-page detection (footer-safe) -----
+  // ----- Bottom-of-page detection -----
   function reachedBottom() {
     return window.innerHeight + window.scrollY >= document.body.scrollHeight - bottomOffset;
   }
 
-  // ----- Estimate reading time based on visible text -----
+  // ----- Estimate reading time based on body text -----
   function readingTimeMs() {
     const bodyText = document.body.innerText || "";
     const normalized = bodyText.replace(/\s+/g, " ").trim();
     const words = normalized.split(" ").length;
-    const minutes = words / wordsPerMinute;
-    return minutes * 60 * 1000; // milliseconds
+    return (words / wordsPerMinute) * 60 * 1000;
   }
 
   const minExposureTime = readingTimeMs();
@@ -402,39 +402,50 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Consent recorded via", method, `(required reading time: ${Math.round(minExposureTime / 1000)}s)`);
   }
 
-  // ----- Scroll listener (secondary/mobile consent) -----
-  window.addEventListener("scroll", () => {
+  // ----- Scroll listener (consent + fullscreen) -----
+  function handleScroll() {
+    // Consent: bottom-of-page reached
     if (!consentGiven && reachedBottom()) {
       recordConsent("scroll-bottom");
     }
-  }, { passive: true });
 
-  // ----- Click / tap / keyboard listener (primary consent + fullscreen) -----
-  function handleUserGesture() {
-    // Fullscreen triggers immediately — required by browser gesture rules
+    // Fullscreen: trigger once on scroll (touchscreen/mobile mostly)
+    if (!fullscreenTriggered) {
+      fullscreenTriggered = true;
+      document.documentElement.requestFullscreen().catch(err => {
+        console.warn("Fullscreen request on scroll failed:", err.message);
+      });
+      // Remove scroll listener after first fullscreen attempt
+      window.removeEventListener("scroll", handleScroll, { passive: true });
+    }
+  }
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  // ----- Click / tap / keyboard listener (primary gesture) -----
+  function handleGesture() {
+    // Consent: click/tap
+    if (!consentGiven) recordConsent("click");
+
+    // Fullscreen: click triggers for desktop fallback
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch(err => {
-        console.warn("Fullscreen request failed:", err.message);
+        console.warn("Fullscreen request on click failed:", err.message);
       });
     }
 
-    // Consent respects reading time
-    if (!consentGiven) recordConsent("click");
-
-    // Remove listeners after first gesture
-    document.removeEventListener("click", handleUserGesture);
-    document.removeEventListener("touchstart", handleUserGesture);
-    document.removeEventListener("keydown", handleUserGesture);
-    document.removeEventListener("scroll", handleUserGesture);
+    // Remove gesture listeners after first activation
+    document.removeEventListener("click", handleGesture);
+    document.removeEventListener("touchstart", handleGesture);
+    document.removeEventListener("keydown", handleGesture);
   }
 
-  // Attach gesture listeners for all device types
-  document.addEventListener("click", handleUserGesture);
-  document.addEventListener("touchstart", handleUserGesture);
-  document.addEventListener("keydown", handleUserGesture);
-  document.removeEventListener("scroll", handleUserGesture);
+  // Attach gesture listeners
+  document.addEventListener("click", handleGesture);
+  document.addEventListener("touchstart", handleGesture);
+  document.addEventListener("keydown", handleGesture);
 });
 </script>
+
   <footer>
     &copy; 2025 Q. Dagbjort Huangington. All rights reserved.
   </footer>
