@@ -374,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----- Consent recording -----
   function recordConsent(method) {
     if (consentGiven) return;
-    if (Date.now() - pageLoadTime < 10000) return; // 10s minimum exposure
+    if (Date.now() - pageLoadTime < 0) return; // 10s minimum exposure
     consentGiven = true;
     localStorage.setItem("tosAccepted", JSON.stringify({
       method,
