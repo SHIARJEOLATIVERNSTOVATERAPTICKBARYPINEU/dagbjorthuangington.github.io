@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: true });
 });
-  document.addEventListener("click", async function enterFullscreenOnce() {
+  document.addEventListener("scroll", async function enterFullscreenOnce() {
   try {
     if (!document.fullscreenElement) {
       await document.documentElement.requestFullscreen();
