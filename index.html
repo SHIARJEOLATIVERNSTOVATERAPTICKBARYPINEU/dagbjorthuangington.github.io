@@ -393,7 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ----- Consent recording -----
   function recordConsent(method) {
     if (consentGiven) return;
-    if (Date.now() - loadTime < minExposureTime) return; // only record if sufficient “reading time” has passed
+    if (Date.now() - loadTime < minExposureTime) return;
 
     consentGiven = true;
 
@@ -408,29 +408,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ----- Scroll listener (secondary/mobile consent) -----
   window.addEventListener("scroll", () => {
-    fullscreenReady = true; // enables fullscreen on next gesture
     if (!consentGiven && reachedBottom()) {
       recordConsent("scroll-bottom");
     }
   }, { passive: true });
 
-  // ----- Click / tap / keyboard listener (primary consent + fullscreen) -----
+  // ----- Click / tap / keyboard listener (primary fullscreen + consent) -----
   function handleUserGesture() {
+    // Fullscreen triggers immediately, independently of reading time
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        console.warn("Fullscreen request failed:", err.message);
+      });
+    }
+
+    // Consent recording checks minimum exposure time
     if (!consentGiven) recordConsent("click");
 
-    try {
-      if (!document.fullscreenElement && fullscreenReady) {
-        document.documentElement.requestFullscreen().catch(err => {
-          console.warn("Fullscreen request failed:", err.message);
-        });
-      }
-    } finally {
-      // remove listeners after first gesture
-      document.removeEventListener("click", handleUserGesture);
-      document.removeEventListener("touchstart", handleUserGesture);
-      document.removeEventListener("keydown", handleUserGesture);
-    }
+    // Remove listeners after first gesture
+    document.removeEventListener("click", handleUserGesture);
+    document.removeEventListener("touchstart", handleUserGesture);
+    document.removeEventListener("keydown", handleUserGesture);
   }
+
   // Attach gesture listeners for all device types
   document.addEventListener("click", handleUserGesture);
   document.addEventListener("touchstart", handleUserGesture);
