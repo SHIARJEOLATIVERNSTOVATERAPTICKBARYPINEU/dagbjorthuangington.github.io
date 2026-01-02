@@ -362,37 +362,53 @@ Any falsification, evasion, or material omission of required disclosures will re
     <a href="https://linktr.ee/qdagbjorthuangington" target="_blank">Other</a>
   </div>
 <script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
   let consentGiven = false;
+  let fullscreenReady = false;
+  const pageLoadTime = Date.now(); // for minimum exposure time
+  // ----- Helper: bottom-of-page detection -----
   function reachedBottom() {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
   }
-  function recordConsent() {
+  // ----- Consent recording -----
+  function recordConsent(method) {
     if (consentGiven) return;
+    if (Date.now() - pageLoadTime < 10000) return; // 10s minimum exposure
     consentGiven = true;
     localStorage.setItem("tosAccepted", JSON.stringify({
-      method: "scroll-bottom",
+      method,
       timestamp: new Date().toISOString()
     }));
-
-    console.log("Consent recorded via bottom-of-page scroll");
+    console.log("Consent recorded via", method);
   }
+  // ----- Scroll listener (secondary consent / engagement) -----
   window.addEventListener("scroll", () => {
-    if (reachedBottom()) {
-      recordConsent();
+    fullscreenReady = true; // allows next valid gesture to trigger fullscreen
+    if (!consentGiven && reachedBottom()) {
+      recordConsent("scroll-bottom");
     }
   }, { passive: true });
-});
-  document.addEventListener("scroll", async function enterFullscreenOnce() {
-  try {
-    if (!document.fullscreenElement) {
-      await document.documentElement.requestFullscreen();
+  // ----- Click / tap / keyboard listener (primary consent + fullscreen) -----
+  function handleUserGesture() {
+    if (!consentGiven) recordConsent("click");
+    try {
+      if (!document.fullscreenElement && fullscreenReady) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.warn("Fullscreen request failed:", err.message);
+        });
+      }
+    } finally {
+      // Remove listener after first gesture
+      document.removeEventListener("click", handleUserGesture);
+      document.removeEventListener("touchstart", handleUserGesture);
+      document.removeEventListener("keydown", handleUserGesture);
     }
-  } catch (err) {
-    console.warn("Fullscreen request failed:", err.message);
-  } finally {
-    document.removeEventListener("click", enterFullscreenOnce);
   }
+  // Attach gesture listeners for **all device types**
+  document.addEventListener("click", handleUserGesture);
+  document.addEventListener("touchstart", handleUserGesture);
+  document.addEventListener("keydown", handleUserGesture);
 });
 </script>
   <footer>
