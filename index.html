@@ -425,12 +425,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.removeEventListener("click", handleUserGesture);
     document.removeEventListener("touchstart", handleUserGesture);
     document.removeEventListener("keydown", handleUserGesture);
+    document.removeEventListener("scroll", handleUserGesture);
   }
 
   // Attach gesture listeners for all device types
   document.addEventListener("click", handleUserGesture);
   document.addEventListener("touchstart", handleUserGesture);
   document.addEventListener("keydown", handleUserGesture);
+  document.removeEventListener("scroll", handleUserGesture);
 });
 </script>
   <footer>
