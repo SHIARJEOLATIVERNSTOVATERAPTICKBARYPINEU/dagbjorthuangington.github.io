@@ -362,38 +362,34 @@ Any falsification, evasion, or material omission of required disclosures will re
     <a href="https://linktr.ee/qdagbjorthuangington" target="_blank">Other</a>
   </div>
 <script>
-<script>
 document.addEventListener("DOMContentLoaded", () => {
   let consentGiven = false;
-  let fullscreenReady = false;
-  // ----- Helper: bottom-of-page detection -----
+
+  // ----- Configuration -----
+  const wordsPerMinute = 200;          // Average reading speed
+  const bottomOffset = 20;             // Pixels from page bottom to trigger scroll consent
+
+  // ----- Helper: bottom-of-page detection (footer-safe) -----
   function reachedBottom() {
-    return window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
+    return window.innerHeight + window.scrollY >= document.body.scrollHeight - bottomOffset;
   }
-  // ----- Estimate reading time -----
+
+  // ----- Estimate reading time based on visible text -----
   function readingTimeMs() {
-  // Get all visible text in body
-  const bodyText = document.body.innerText || "";
+    const bodyText = document.body.innerText || "";
+    const normalized = bodyText.replace(/\s+/g, " ").trim();
+    const words = normalized.split(" ").length;
+    const minutes = words / wordsPerMinute;
+    return minutes * 60 * 1000; // milliseconds
+  }
 
-  // Normalize whitespace: multiple spaces, newlines, tabs → single space
-  const normalizedText = bodyText.replace(/\s+/g, " ").trim();
+  const minExposureTime = readingTimeMs();
+  const pageLoadTime = Date.now();
 
-  // Count words
-  const words = normalizedText.split(" ").length;
-
-  // Reading speed: 200 words per minute
-  const wordsPerMinute = 200;
-  const minutes = words / wordsPerMinute;
-
-  // Convert minutes → milliseconds
-  return minutes * 60 * 1000;
-}
-  const minExposureTime = readingTimeMs(); // dynamically based on body text
-  const loadTime = Date.now();
-  // ----- Consent recording -----
+  // ----- Record consent -----
   function recordConsent(method) {
     if (consentGiven) return;
-    if (Date.now() - loadTime < minExposureTime) return;
+    if (Date.now() - pageLoadTime < minExposureTime) return; // enforce reading time
 
     consentGiven = true;
 
@@ -413,16 +409,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: true });
 
-  // ----- Click / tap / keyboard listener (primary fullscreen + consent) -----
+  // ----- Click / tap / keyboard listener (primary consent + fullscreen) -----
   function handleUserGesture() {
-    // Fullscreen triggers immediately, independently of reading time
+    // Fullscreen triggers immediately — required by browser gesture rules
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen().catch(err => {
         console.warn("Fullscreen request failed:", err.message);
       });
     }
 
-    // Consent recording checks minimum exposure time
+    // Consent respects reading time
     if (!consentGiven) recordConsent("click");
 
     // Remove listeners after first gesture
