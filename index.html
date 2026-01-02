@@ -157,7 +157,7 @@
   <section id="contact-terms">
   <h2>Terms, Declarations, &amp; Licensing Conditions</h2>
 <div class="contact">
-<em>Effective immediately and indefinitely upon one of two scenarios: (A) reading, clicking this site, and filling out the contact form; or (B) creating any content using any character, item, or device directly from the works created by the entity operating under the author pen name, or created through collaboration or partnership with that entity.</em>
+<em>These terms become effective upon the first occurrence of either of the following: (A) the user reaching the end of this page after having had the opportunity to review these terms; or (B) the user knowingly creating, publishing, or distributing content that makes substantive use of any character, item, or device originating from works created by the entity operating under the author’s pen name, whether independently or through collaboration or partnership.</em>
 <p><em>Side Note: terms like me, my, and I do not refer to the reader and those who agree to the terms and conditions but the creator under this pen name, unless by word context that it applies to the binding entity.</em></p>
 <p>
 By accessing this website—regardless of intent, method, or point of entry—you hereby unconditionally agree to the following legally binding Terms of Use and Conditional License Agreement. These terms apply globally, without exception, and are considered enforceable under all relevant national and international jurisdictions.
@@ -364,15 +364,12 @@ Any falsification, evasion, or material omission of required disclosures will re
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   let consentGiven = false;
-
   function reachedBottom() {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
   }
-
   function recordConsent() {
     if (consentGiven) return;
     consentGiven = true;
-
     localStorage.setItem("tosAccepted", JSON.stringify({
       method: "scroll-bottom",
       timestamp: new Date().toISOString()
@@ -380,12 +377,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Consent recorded via bottom-of-page scroll");
   }
-
   window.addEventListener("scroll", () => {
     if (reachedBottom()) {
       recordConsent();
     }
   }, { passive: true });
+});
+  document.addEventListener("click", async function enterFullscreenOnce() {
   try {
     if (!document.fullscreenElement) {
       await document.documentElement.requestFullscreen();
