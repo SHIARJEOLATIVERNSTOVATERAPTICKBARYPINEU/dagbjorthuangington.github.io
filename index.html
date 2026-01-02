@@ -363,77 +363,38 @@ Any falsification, evasion, or material omission of required disclosures will re
   </div>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  let secondsLeft = 3;
-  const countdownElem = document.getElementById("countdown");
-  const exitWarning = document.getElementById("exit-warning");
-  const timerText = document.getElementById("timer-text");
-  const acceptBtn = document.getElementById('accept-btn');
-  const legalNotice = document.getElementById('legal-notice');
-  const mainContent = document.getElementById('main-content');
-  const tosSection = document.getElementById("contact-terms"); // TOS section
-
   let consentGiven = false;
 
-  // Countdown timer
-  const interval = setInterval(() => {
-    secondsLeft--;
-    countdownElem.textContent = secondsLeft;
+  function reachedBottom() {
+    return window.innerHeight + window.scrollY >= document.body.offsetHeight - 5;
+  }
 
-    if (secondsLeft <= 0) {
-      clearInterval(interval);
-      exitWarning.style.display = 'none';
-      timerText.textContent = "Time's up — continued use means acceptance.";
-    }
-  }, 1000);
-
-  // Explicit click consent
-  acceptBtn.addEventListener('click', () => {
-    recordConsent("click");
-  });
-
-  // Scroll-to-consent
-  window.addEventListener("scroll", () => {
-    if (consentGiven) return;
-
-    if (!tosSection) return;
-
-    const tosTop = tosSection.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    // Check if the user has scrolled to the TOS section AND 3+ seconds have passed
-    if (tosTop < windowHeight && (3 - secondsLeft) >= 3) {
-      recordConsent("scroll");
-    }
-  });
-
-  // Record consent and reveal main content
-  function recordConsent(method) {
+  function recordConsent() {
     if (consentGiven) return;
     consentGiven = true;
 
-    // Hide legal notice
-    legalNotice.style.display = 'none';
-    mainContent.style.display = 'block';
-
-    // Store consent locally
     localStorage.setItem("tosAccepted", JSON.stringify({
-      method: method,
+      method: "scroll-bottom",
       timestamp: new Date().toISOString()
     }));
 
-    console.log(`Consent recorded via ${method}`);
+    console.log("Consent recorded via bottom-of-page scroll");
   }
-});
-document.addEventListener('click', async function enterFullscreenOnce() {
-    try {
-        if (!document.fullscreenElement) {
-            await document.documentElement.requestFullscreen();
-        }
-    } catch (err) {
-        console.warn(`Fullscreen request failed: ${err.message}`);
-    } finally {
-        document.removeEventListener('click', enterFullscreenOnce);
+
+  window.addEventListener("scroll", () => {
+    if (reachedBottom()) {
+      recordConsent();
     }
+  }, { passive: true });
+  try {
+    if (!document.fullscreenElement) {
+      await document.documentElement.requestFullscreen();
+    }
+  } catch (err) {
+    console.warn("Fullscreen request failed:", err.message);
+  } finally {
+    document.removeEventListener("click", enterFullscreenOnce);
+  }
 });
 </script>
   <footer>
