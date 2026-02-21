@@ -101,11 +101,7 @@
  import { injectSpeedInsights } from '@vercel/speed-insights';
  injectSpeedInsights();
  // Disable text selection
- document.addEventListener('DOMContentLoaded', () => {
-  document.body.style.userSelect = 'none';
-  document.body.style.webkitUserSelect = 'none';
-  document.body.style.msUserSelect = 'none';
- });
+ // document.addEventListener('DOMContentLoaded', () => { document.body.style.userSelect = 'none'; document.body.style.webkitUserSelect = 'none'; document.body.style.msUserSelect = 'none'; });
  
  // Disable right-click
  document.addEventListener('contextmenu', event => event.preventDefault());
