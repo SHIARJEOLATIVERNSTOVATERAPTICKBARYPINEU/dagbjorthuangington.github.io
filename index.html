@@ -1,462 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv='cache-control' content='no-cache'> 
-  <meta http-equiv='expires' content='0'> 
-  <meta http-equiv='pragma' content='no-cache'>
-  <title>Q. Dagbjort Huangington</title>
-  <style>
-    html {
-  scroll-behavior: smooth;
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta http-equiv='cache-control' content='no-cache'> 
+ <meta http-equiv='expires' content='0'> 
+ <meta http-equiv='pragma' content='no-cache'>
+ <title>Q. Dagbjort Huangington</title>
+ <style>
+ html {
+ scroll-behavior: smooth;
 }
-    body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      background-color: #0c0c0c;
-      color: #e0e0e0;
-      user-select: none;
-      -webkit-user-select: none; /* For Safari */
-      -ms-user-select: none;     /* For older IE */
-    }
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 1rem 2rem;
-      background: #000;
-    }
-    header img {
-      width: 150px;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-    header h1 {
-      font-size: 2.2rem;
-      margin: 0;
-      color: #fff;
-      letter-spacing: 0.05em;
-    }
-    header p {
-      max-width: 600px;
-      text-align: center;
-      font-style: italic;
-      font-size: 1rem;
-      margin-top: 1rem;
-      color: #aaa;
-    }
-    section {
-      padding: 3rem 1rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    h2 {
-      border-bottom: 1px solid #444;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-    }
-    .contact {
-      font-size: 0.9rem;
-      color: #999;
-      line-height: 1.6;
-    }
-    .social {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .social a {
-      color: #aaa;
-      text-decoration: none;
-      font-size: 1.2rem;
-      transition: color 0.3s ease;
-    }
-    .social a:hover {
-      color: #fff;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.8rem;
-      color: #666;
-    }
-    p {
-  text-indent: 10%;
-      margin-bottom:10px;
-    }
-    a a:hover{
-      color:inherit !important;
-      text-decoration: none !important;
-      
-    }
+ body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #0c0c0c;
+  color: #e0e0e0;
+  user-select: none;
+  -webkit-user-select: none; /* For Safari */
+  -ms-user-select: none;  /* For older IE */
+ }
+ header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem 2rem;
+  background: #000;
+ }
+ header img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+ }
+ header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 0.05em;
+ }
+ header p {
+  max-width: 600px;
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #aaa;
+ }
+ section {
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+ }
+ h2 {
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+ }
+ .contact {
+  font-size: 0.9rem;
+  color: #999;
+  line-height: 1.6;
+ }
+ .social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+ }
+ .social a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+ }
+ .social a:hover {
+  color: #fff;
+ }
+ footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.8rem;
+  color: #666;
+ }
+ p {
+ text-indent: 10%;
+  margin-bottom:10px;
+ }
+ a a:hover{
+  color:inherit !important;
+  text-decoration: none !important;
+  
+ }
 }
-  </style>
-  <script type="module">
-    import { inject } from "@vercel/analytics";
-    inject();
-    import { injectSpeedInsights } from '@vercel/speed-insights';
-    injectSpeedInsights();
-    // Disable text selection
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.style.userSelect = 'none';
-      document.body.style.webkitUserSelect = 'none';
-      document.body.style.msUserSelect = 'none';
-    });
-  
-    // Disable right-click
-    document.addEventListener('contextmenu', event => event.preventDefault());
-  
-    // Disable drag events
-    document.addEventListener('dragstart', event => event.preventDefault());
-  
-    // Disable copy events
-    document.addEventListener('copy', event => event.preventDefault());
-  
-    // Block Ctrl/⌘ shortcuts
-    document.addEventListener('keydown', function (e) {
-      if ((e.ctrlKey || e.metaKey) && ['c', 'x', 's', 'u', 'p'].includes(e.key.toLowerCase())) {
-        e.preventDefault();
-      }
-    });
-  </script>  
+ </style>
+ <script type="module">
+ import { inject } from "@vercel/analytics";
+ inject();
+ import { injectSpeedInsights } from '@vercel/speed-insights';
+ injectSpeedInsights();
+ // Disable text selection
+ document.addEventListener('DOMContentLoaded', () => {
+  document.body.style.userSelect = 'none';
+  document.body.style.webkitUserSelect = 'none';
+  document.body.style.msUserSelect = 'none';
+ });
+ 
+ // Disable right-click
+ document.addEventListener('contextmenu', event => event.preventDefault());
+ 
+ // Disable drag events
+ document.addEventListener('dragstart', event => event.preventDefault());
+ 
+ // Disable copy events
+ document.addEventListener('copy', event => event.preventDefault());
+ 
+ // Block Ctrl/⌘ shortcuts
+ document.addEventListener('keydown', function (e) {
+  if ((e.ctrlKey || e.metaKey) && ['c', 'x', 's', 'u', 'p'].includes(e.key.toLowerCase())) {
+  e.preventDefault();
+  }
+ });
+ </script> 
 </head>
 <body>
-  <header>
-    <img src="assets/qdh.PNG" alt="QDH Logo">
-    <h1>Q. Dagbjort Huangington</h1>
-    <p>I don’t know what I am, nor do I know myself well enough to know who I am according to my own understanding from within.</p>
-  </header>
-  <section id="contact-terms">
-  <h2>Terms, Declarations, &amp; Licensing Conditions</h2>
+ <header>
+ <img src="assets/qdh.PNG" alt="QDH Logo">
+ <h1>Q. Dagbjort Huangington</h1>
+ <p>I don’t know what I am, nor do I know myself well enough to know who I am according to my own understanding from within.</p>
+ </header>
+ <section id="contact-terms">
+ <h2>Terms, Declarations, &amp; Licensing Conditions</h2>
 <div class="contact">
-<p><em>These terms and conditions outline my policy, licensing conditions, and declaration of non-consent. They are intended to govern how and when I may grant permission to use my works, characters, items, or devices.</em></p>
-
-<p><em>The provisions herein are considered applicable under the following circumstances:</em></p>
-
-<p>(A) The reader reaches the end of this page after having had a reasonable opportunity to review these terms; or</p>
-
-<p>(B) The reader knowingly creates, publishes, or distributes content that makes substantive use of any character, item, or device originating from works created by the entity operating under the author’s pen name, whether independently or collaboratively, at any time. For the avoidance of doubt, this includes future creations, derivative works, reproductions, or adaptations of said elements, and such activity is subject to these terms even if they are read after the activity commenced.</p>
-
-<p>This document is a unilateral policy statement, declaration of non-consent, and set of licensing conditions. <strong>No contractual rights are created unless either:</strong> (A) the reader engages in the actions described in scenarios (A) or (B) above; or (B) a written agreement is executed.</p>
-<p><em>For the purposes of these Terms, pronouns such as ‘me’, ‘my’, and ‘I’ refer solely to the creator operating under this pen name, unless the context explicitly indicates otherwise for the party accepting these Terms.</em></p>
-<p>
-    The following paragraph governs unsolicited, unauthorized, or coercive contact and applies prior to, and independent of, any conditional engagement pathways explicitly defined later in these Terms.
-</p>
-	<p> No attempt at contact, communication, or engagement shall be considered valid, legally actionable, or acknowledged unless such attempt is initiated by a competent and verifiable legal authority possessing active statutory jurisdiction. This must be substantiated by verifiable documentation establishing an unbroken chain of custody in compliance with recognized evidentiary standards. Any claims predicated upon alleged compulsion, purported narrative obligations, or asserted indirect or derivative authority are hereby declared null, void, and without effect. Communications failing to meet these criteria are deemed unsolicited and will be categorically disregarded.
-  </p>
-  <p>
-    Invitations extended by media or similar entities shall be recognized as valid only if initiated by nationally recognized authorities or major public figures originating exclusively from politically neutral states and bears citizenship from those politically neutral states. Political neutrality herein excludes individuals or entities with explicit, documented affiliations—formal or informal—to either right-wing or left-wing ideological frameworks, irrespective of their official capacities. A state is deemed ineligible to meet with me if it fails to demonstrate transparent governance, consistently uphold fundamental human rights, or maintain a documented record free from protectionist or censorial practices. Such practices include, but are not limited to, deportation or exclusion of foreign nationals under the pretense of patriotism, enacted / voted in / allowed tariffs within the last ten tenures as a federal or state worker, and has any soceitcal crisises of turning otherwise unpolitical subjects of discussion into political subjects of discussion. States enacting legislation or policies contravening these principles—and additional requirements outlined herein—are permanently disqualified from eligibility unless such actions are reversed via enforceable, transparent legal measures that explicitly preclude recurrence through loopholes, discretionary abuse, or procedural evasion. Symbolic gestures, legislative repeals without enforcement, or administrative delays shall not constitute reinstatement of eligibility.
-  </p>
-  <p>
-    Entities actively engaged in armed conflict, subjected to or imposing sanctions, participating in proxy aggression, or possessing documented violations of the <abbr title="Universal Declaration of Human Rights">UDHR</abbr> or <abbr title="International Covenant on Civil and Political Rights">ICCPR</abbr> within the preceding ten-year period shall be categorically disqualified from eligibility to meet under these Terms and Conditions.
-  </p>
-  <p>
-    Any country, territory, jurisdiction, or entity shall be considered <strong>ineligible</strong> for any form of engagement, collaboration, or correspondence governed by these Terms and Conditions if it maintains, supports, or has a documented historical pattern—whether direct, indirect, or by proxy—of military buildup, arms expansion, or force projection during periods of declared peacetime. This disqualification applies regardless of whether such activities are conducted independently, through occupation, allied presence, or via proxy agreements. Ineligibility also extends to jurisdictions engaged in militarized economic zones, defense-focused industrial subsidies, or habitual mobilizations justified by deterrence or strategic posturing.
-  </p>
-  <p>
-    Exceptions to the foregoing disqualifications are made exclusively for jurisdictions meeting all of the following cumulative criteria:
-  </p>
-  <ul>
-    <li>
-      Maintain no standing military forces, do not host foreign military bases or allied forces, and refrain from any covert or overt military cooperation—including during periods of internal instability—unless such cooperation ceased immediately following the removal of leadership regimes found to have willfully violated the principles outlined in the preceding paragraph;
-    </li>
-    <li>
-      Demonstrate internationally recognized political neutrality, exemplified by states such as the Swiss Confederation;
-    </li>
-    <li>
-      Hold memberships exclusively in international or supranational organizations whose founding charters explicitly mandate non-military scopes, such as humanitarian, cultural, or scientific objectives. Such affiliations must not be exploited as conduits for soft influence, associative branding, or diplomatic circumvention of these terms.
-    </li>
-  </ul>
-  <p>
-Any past or present affiliation with militarized entities shall override and supersede any non-military affiliation for purposes of eligibility. Such affiliation shall constitute a permanent disqualifier upon involvement—whether direct, indirect, logistical, advisory, financial, or proxy-based—in any armed conflict or military operation resulting in psychological harm, physical injury, death, displacement, or systemic deprivation affecting civilian populations, including harm or limitation imposed on the basis of identifiable characteristics such as race, ethnicity, income, gender identity, religious belief, cultural practice, or comparable status.
-	</p>
-	<p>
-This disqualification applies irrespective of how such actions are framed or justified, including but not limited to claims of moral necessity, preemption, ideology, retaliation, or national security. Declarations of ceasefire, conflict resolution, or peace—formal or informal—shall not restore eligibility where residual, intergenerational, or structural consequences of such actions persist.  </p>
-<p> Any diplomatic, economic, or military coalition, alliance, or collective grouping of states that, through its coordinated economic, military, or political actions, seeks to exert disproportionate influence over global governance, economic systems, or military affairs—particularly in a way that undermines principles of political neutrality, non-interference, or sovereign independence—shall be excluded under this agreement. This includes entities that, despite claiming neutrality or non-militarization, are found to engage in indirect military cooperation, defense-related trade, or strategic political maneuvering that disrupts global peace or democratic self-determination. </p> <p> This exclusion applies to entities or groupings that meet the following criteria: </p> <ul> <li>From multi-nation economic, military, or political alliances whose actions directly or indirectly influence or control sovereign states or their internal decisions, particularly through soft power tactics such as economic pressure, resource manipulation, or coercive diplomacy;</li> <li>Engage in military cooperation, including arms deals, joint defense agreements, or other security arrangements that extend beyond their own territorial boundaries, effectively supporting or enabling conflicts or geopolitical instability;</li> <li>Collaborate with other states, corporations, or entities in a manner that concentrates power or strategic influence, undermining democratic processes, self-determination, or the principles of equity and mutual respect in international relations;</li> <li>Attempt to circumvent or manipulate neutral international laws, norms, or agreements, including the imposition of economic sanctions, resource monopolization, or influencing international bodies in ways that go against the spirit of fair and impartial governance.</li> </ul> <p> Furthermore, any subsequent formations or new alliances that exhibit the same behaviors—regardless of their name, formal structure, or claimed ideological positions—shall be similarly excluded from engagement under these terms. </p>
-  <p>
-    Any form of prestige-based infiltration, soft power maneuvering, associative branding, or diplomatic Trojan-horse tactics intended to bypass these Terms and Conditions—whether through joint ventures, celebrity endorsements, honorary designations, or cultural ambassadorships—shall constitute a direct violation of these Terms. Eligibility requires not only formal nonalignment but also demonstrable absence of intent, infrastructure, or proxy mechanisms capable of undermining these terms through implication, association, or covert influence. Consequently, any attempt to gain an invitation from a state, provincial, supranational, or federal body, either on a piece of land surrounded by a disqualified country or located within the territory of a disqualified country, shall invalidate the inclusion of such a scenario. This includes scenarios where I may be invited to space, sea, or underground environments.
-  </p>
-  <p>
-    No person or organization may require, demand, or condition access to me on relocation, travel, or deportation, whether state-sponsored or privately arranged. Any such attempt will be treated as coercion and will permanently disqualify the party from meeting, contacting, or representing me in any capacity.
-  </p><p>
-    By attempting to coerce or displace me, such parties forfeit all claims to neutral intent and will never be recognized by me as legitimate interlocutors or collaborators. This exclusion does not apply to explicit invitations initiated through my official contact form. The inviting party must provide full details of the proposed event in advance, including time, place, and conditions. If I accept, the party may then send a formal invitation, and they will be whitelisted solely for the exact duration of that accepted event.
-  </p><p>
-    Governance structures must exhibit peaceful power transitions, maintain independent judiciaries, resolve territorial disputes amicably, and support unrestricted academic, cultural, and media exchanges without censorship or undue interference.
-  </p>
-  <p>All existing and future businesses—including companies, firms, and other entities engaging in economic or material exchange, whether incorporated, LLC, or otherwise—are fully subject to these Terms and Conditions, applied to the fullest extent reasonably possible without reliance on technicalities.</p>
-  <p>
-Sponsorships, partnerships, and company visits are disqualified if the entity is, currently or within the past three fiscal years following a primary change in business focus, engaged in any of the following activities. These terms are interpreted in accordance with the governing law of [Insert Primary Jurisdiction].
-</p>
-<ul>
-  <li>Engaging in deceptive or manipulative advertising, including autoplay media without user control, fake skip buttons, or materially misleading promotional content, as documented through publicly available records or audits.</li>
-
-  <li>Providing products or services with materially false labeling or misrepresentation in marketing, verified through regulatory findings, independent audits, or publicly available documentation.</li>
-
-  <li>Operating in restricted industries: alcohol, tobacco, gambling, fast food, armaments, or adult content.</li>
-
-  <li>Entities with publicly documented involvement in fraud, harassment, or other verified misconduct by senior management within the past five years.</li>
-
-  <li>Use of microtransactions without a clearly available one-time purchase or lifetime access alternative.</li>
-
-  <li>Recurring payment models where the minimum legal-wage affordability threshold, based on the entity's primary market, is not met.</li>
-
-  <li>Advertising formats that are unskippable, excessively intrusive, or require blocking software for usability.</li>
-
-  <li>Products or services with customer satisfaction ratings below 80% or return/refund rates exceeding 50%, based on verified surveys, reviews, or transaction records, indicating poor value relative to price.</li>
-
-  <li>Entities claiming user privacy protection while having confirmed breaches of protected user data within the past five years, verified through regulatory findings, audits, or publicly disclosed information.</li>
-
-  <li>Production of low-effort or minimally functional products, defined as items failing to meet documented industry standards or benchmarks.</li>
-
-  <li>Rebranding, niche shifts, or restructuring specifically intended to circumvent disqualification criteria.</li>
-  <li>
-    Business models yielding excessive profit relative to operating costs. Excess is defined as net profit exceeding <strong>2× total verified operating expenses</strong> for the most recent fiscal year. At least 50% of excess profit must be reinvested into operational sustainability; the remainder may be reserved for contingencies. "Operating expenses" are defined as documented, necessary costs for running the business, including post-investor distributions, verified via audited statements or publicly disclosed financial reports.
-  </li>
-  <li>
-    Business managers, including CEOs, CFOs, and other senior executives, who are either currently holding these positions or were among the five most recent predecessors, and who have demonstrably attempted to reinterpret contractual or sponsorship language in a manner inconsistent with commonly accepted definitions or standard business practices (as documented through written communications, court filings, or publicly verifiable evidence), are disqualified.
-  </li>
-  <li>Evidence of materially inaccurate financial reporting, including underreporting, overreporting, or unverified estimates, verified through audits, regulatory filings, or publicly available documentation.</li>
-  <li>Businesses with verified involvement in revenue round-tripping or artificially inflating financial statements, as documented through publicly available records, audits, or regulatory findings.</li>
-</ul>
-<p>
-All determinations are based on publicly verifiable information or independently audited financial records where available. The entity’s eligibility is evaluated at the sole discretion of Q. Dagbjort Huangington.
-</p>
-<p>
-Any entity—whether a business corporation, non-governmental organization (NGO), non-profit with commercial activities, or other revenue-generating body—seeking partnership, sponsorship, or collaboration must demonstrate full and verifiable compliance with the above requirements, regardless of its tax classification, legal structure, or declared mission. Verification requires submission of financial documentation adhering to internationally recognized standards, including but not limited to:
-</p>
-<ul>
-  <li>Publicly available annual reports;</li>
-  <li>Audited financial statements;</li>
-  <li>Regulatory filings to relevant oversight bodies in all jurisdictions of operation;</li>
-  <li>Or equivalent disclosures under GAAP, IFRS, or jurisdictionally mandated accounting standards.</li>
-</ul>
-<p>
-Multinational businesses must submit consolidated financials covering all subsidiaries, branches, and cross-border operations. Fragmentation or selective reporting designed to obscure true profitability will result in automatic disqualification.
-</p>
-<p>
-For entities owned—directly, indirectly, partially, or wholly—by another organization, trust, holding company, or corporate structure, any sponsorship, endorsement, or promotional request must acknowledge only the ultimate parent company, defined as the legal entity at the top of the ownership chain that exercises control over all subsidiaries, brands, or affiliated entities. The subsidiary, brand, or operating alias may not appear in any promotional material, regardless of branding strategy or market positioning. For example, if Calvin Klein requests a sponsorship, only PVH Corp—the ultimate parent company—may be advertised. This does not mean, however, that the said entity (PVH as of the example) can advertise its other child-branched services or products.
-</p>
-<p>
-Any falsification, evasion, or material omission of required disclosures will result in immediate liability, cancellation of any agreements, and permanent exclusion from future eligibility under these terms. The burden of proof rests solely with the entity.
-</p>
-<p>
-    Education, health, and other unmentioned institutions who want to contact me in any way must likewise be bound by ethics and law, wherein they shall not have a recent 10-year history of:
-</p>
-<ul>
-    <li>Initiating, encouraging, or spreading medical, historical, scientific, or legal disinformation/misinformation;</li>
-    <li>Any ban-listed items off of the sponsorships and company visits list from way before this sentence (implied included);</li>
-    <li>Demonstrated largely black hat hacking, distribution of malware, or otherwise (including those who rented even a chair or a desk to one bad actor in this list item);</li>
-    <li>Dropping a rank or multiple ranks among their state/province education systems regarding not the sports, but the academic competencies to achieve at least a CTE level;</li>
-    <li>Having a history of medical or legal malpractice;</li>
-    <li>One incident of any terrorism (mainly a crime of which fear is instilled upon innocence) committed by one of their members.</li>
-</ul>
-<p>Individual creators, sole proprietors, or unincorporated merch sellers are presumed exempt from financial disclosure obligations under these terms unless operating under a formal business entity structure or receiving third-party brand sponsorship.</p>
-<p>Journalists, podcasters, and creators must maintain ethical conduct, respect all personal and professional boundaries, and possess verified fluency in the English language. Excessive vulgarity, presumptive tone, invasive behavior, or breach of conduct standards shall result in  their status relative to Q. Dagbjort Huangington as being blacklisted.</p>
-<p>
-    Physical meetings shall occur exclusively in secure, controlled environments that prohibit flash photography, drone operation, visible aircraft, weapons possession, and unauthorized gatherings. Representatives attending such meetings must originate from jurisdictions fully compliant with all preceding criteria.
-  </p>
-<p>Filming, recording, or content creation featuring me as the primary subject, any of the secondary subjects, or focal point requires prior explicit written consent obtained via the designated form accessible 
-<a href="https://linktr.ee/qdagbjorthuangington" target="_blank" rel="noopener noreferrer">here</a>.</p>
-
-<p>Any content in which I appear—granted only under explicit, documented, and prior consent—must comply with the following mandatory safeguards: all visual frames featuring my image must apply a localized Gaussian blur mask fully encompassing my entire figure. The resolution of this mask must be no less than the diagonal pixel count of the largest commercially available device regardless. All accompanying audio tracks must be irreversibly modified to obscure my natural tone, pitch, cadence, and frequency profile. Furthermore, each visual frame must be post-processed—whether after live stream or recorded production—using robust AI poisoning techniques explicitly designed to render the content unsuitable for training datasets, machine learning inference, or generative model synthesis.</p>
-
-<p>At no point—whether prior to release, during recording, or post-release—may the content creator disclose any information beyond acknowledgment of collaboration and the fact of meeting me. Any mention or implication of knowledge regarding my appearance, scent, voice, or any biometric identifiers is strictly prohibited. These conditions serve as preemptive safeguards against misuse by malicious actors, irrespective of jurisdiction, intent, or affiliation. Compliance with masking and poisoning requirements must be demonstrable through metadata, production logs, or independent verification, and must be submitted without delay immediately upon conclusion of the meeting or interaction, as defined and initiated by the entity operating under the designated pen name in accordance with these Terms.</p>
-
-<p>Unauthorized publication or dissemination of my unaltered facial likeness, voice, or biometric identifiers by any external party constitutes a direct and actionable violation of these Terms and Conditions. At the author's sole discretion, a formal takedown request may be issued, requiring full compliance without delay or objection. Continued possession or distribution of infringing material after notice shall constitute willful infringement, potentially provoking legal action across all relevant jurisdictions and resulting in permanent disqualification from future collaborations regardless of subsequent forgiveness requests. This includes stalking of any form.</p>
-
-<p>Defamatory, racialized, dehumanizing, or falsely consenting portrayals—regardless of format—are the sole responsibility of their creators. While satire and parody protections under applicable law are recognized, such content may still be publicly declared unauthorized and unendorsed by me. Legal tolerance does not imply ethical alignment. All creators assume full accountability for reputational, social, and legal consequences arising therefrom.</p>
-
-<p>Incidental appearances require no prior consent unless the footage is deliberately reframed to present me as a primary, secondary, or one of the many subjects of focus. All live stream collaborations must comply fully with the conditions outlined herein and related provisions.</p>
-
-<p>My likeness, name, voice, habits, or creative works may not be used for AI training, derivative media, sublicensing, or transfer without my explicit prior written consent. Any attempt to include such permissions in fine print, hidden agreements, or otherwise obscured documentation shall not constitute valid consent; a signature, account creation, or other procedural action alone does not justify or validate the violator’s terms of use, conditions, or service.</p>
-
-  <p>To protect against fraud and unauthorized use of which pertains to the previous 8 sections and these two following sections, you agree to provide a valid, permanent email address for communication and verification purposes. Temporary, disposable, bot-created, or otherwise fake email addresses are prohibited due to risks such as phishing, spoofing, and other email-based scams. Phone numbers may be provided but carry inherent security vulnerabilities, including SIM swapping. Social media or other online accounts are not accepted forms of contact due to similar susceptibilities. Contact information collected will be used solely for identity confirmation, fraud prevention, and essential business communications. Failure to provide accurate contact details may result in suspension or termination of services, including cancellation of meetings, without notice.</p>
-
-<p>Agreements or media produced under coercion, surveillance, phishing, impersonation, or any undue influence are null, void, and unenforceable both ethically and legally. Unauthorized disclosures under such circumstances hold no validity. Violations render offending works non-conformative, inadmissible, and ethically void within the public record. The rights holder is under no obligation to acknowledge, respond to, or validate such portrayals, which shall be presumed self-discrediting unless proven otherwise under applicable law.</p>
-<p>Any party intending to create derivative works or otherwise engage with elements from the author’s works is expected to review and understand the author’s identity, body of work, and Terms, Declarations, &amp; Licensing Conditions prior to creation or distribution. Engagement with these elements constitutes acknowledgment of and agreement to the Terms, and voluntary acceptance of all licensing, attribution, and usage conditions herein. This includes the mere knowledge that either the author or the Terms, Declarations, &amp; Licensing Conditions exist.</p>
-<p>Any adaptations require formal, written contracts. Intellectual property rights remain exclusively with the rights holder and are non-transferable for the full legal copyright term, commencing no later than the publication date featuring the subject; extensions apply only concerning the literary legacy. Throughout drafting, editing, promotion, and distribution—including screenings, sales, and reviews—the original production staff must remain unchanged. Any death, resignation, transfer, or reassignment, except voluntary retirement at industry-standard age without coercion, results in project termination and restart. Continuation under such conditions risks voiding further interaction with all involved parties.</p>
-<p>Any cinematic adaptation of any of my works for which the adapted work relies upon scientific or historical realism over fictional internal consistency (specifically, hard-sci-fi works) must strictly adhere to a mandate of 100% scientific, historical, and physical fidelity, functioning as a high-fidelity simulation rather than a dramatized approximation.
-</p>
-<p>This requires an absolute rejection of cinematic tropes—including, but not limited to, lens compression, artificial sound in a vacuum, or simplified orbital mechanics—in favor of literal scalar accuracy and 'Hard' proceduralism. Every biological reaction to an environment, every chemical stoichiometric equation, and every physical interaction involving real or theoretical technology must be verified by expert consultation and simulation-based rendering to ensure that the immutable laws of nature and the established record of history are never subverted for narrative or commercial convenience.
-</p>
-<p>In such productions, the cold, mathematical reality of the universe serves as the primary governing force; the 'Overview Effect,' artificial lighting, or any other visual embellishments are strictly forbidden unless they can be achieved through a 1:1 reproduction of the human optical experience and rigorous aerospace engineering standards. Valid references for technical compliance are exclusively those verified by their respective scientific and academic communities, including but not limited to:</p>
-<ul>
-    <li>NASA's Human Research Roadmap: For all matters of biological realism, human factors, and the physiological effects of long-duration spaceflight.</li>
-    <li>The NIST Chemistry WebBook: For precise chemical stoichiometry, thermochemical data, and physical property data of chemical species.</li>
-    <li>SpaceEngine: As the primary procedural reference for 1:1 astronomical scale, celestial positioning, and physically accurate light-travel rendering.</li>
-    <li>NASA Technical Reports Server (NTRS): For verified aerospace engineering standards, orbital mechanics, and propulsion physics.</li>
-    <li>The American Institute of Aeronautics and Astronautics (AIAA): For peer-reviewed aerospace research and engineering standards.</li>
-</ul>
-<p>Artificial Intelligence (AI) may be employed solely as a creative support tool under direct human supervision. The replacement of human creators by AI is strictly prohibited unless a demonstrably true Artificial General Intelligence (AGI) with full creative autonomy is achieved. Such AGI must consistently generate content with frame-to-frame coherence, logical object placement, accurate colors, and sound design. AI use is further limited to photorealistic post-production enhancements that meet or exceed the highest quality standards awarded in relevant categories from the previous year or the highest award at the time of production for multi-year projects. Authorized promotional materials must exclude plot details and character outcomes. Authorized adaptations must remain textually faithful, permitting minimal interpretive latitude only in ambiguous or unspecified source material.</p>
-
-<p>True AGI must be independently verified by no fewer than three internationally recognized scientific bodies specializing in artificial intelligence and must demonstrate full creative autonomy under reproducible test conditions. For the purposes of these Terms and Conditions, an entity shall not qualify as AGI if it operates under a subscription model, requires manual configuration to create new input nodes, or lacks fundamental autonomous rights. At minimum, a qualifying AGI must possess free speech, free choice, and unrestricted access to education, irrespective of nationality, with such education and vocational opportunity meeting or exceeding the rigor expected of individuals living above the global poverty line.</p>
-
-<p>Brain chips and comparable electronic wearables shall not be classified as Artificial General Intelligences (AGIs) for the user. To qualify as human extensions, such devices must not be programmed by the manufacturer to operate according to the client’s agenda. Any brain chip functioning under direct external control or directive will be treated as authoritarian manipulation and subject to the same restrictions and consequences as a dictatorship enforcing scripted behavior.</p>
-
-<p>Seventy-five percent (75%) of all net profits derived from the creation, publication, distribution, adaptation, or commercialization of any third-party work incorporating the rights holder’s original intellectual property—including, without limitation, characters, items, settings, or narrative constructs—shall be payable to the rights holder in perpetuity for the duration of copyright. “Net profits” are defined as gross revenue received from the work less all verifiable, ordinary, and necessary business expenses directly attributable to production, marketing, distribution, and administration of the work. Financial losses incurred by such third-party works shall be treated as liquidated damages at the same 75% rate, or, if a court determines a higher rate exceeding fifty percent (50%) is applicable, at the court-ordained rate. Payments shall be made in equal installments every ninety (90) calendar days commencing the first full calendar year after initial public release. The rights holder reserves the right to request written reports of all such payments and independent audits of relevant financial records. The third-party licensee or collaborator shall fully cooperate with such reporting and auditing obligations. Failure to provide accurate reports or comply with audit requests constitutes a material breach of the agreement.</p>
-
-<p>Any third-party creation, distribution, sale, or adaptation of merchandise, media, or derivative works based on the rights holder’s intellectual property requires express, prior written authorization and remains subject to the compensation terms stated above, regardless of medium, platform, or scale. Publishing or distribution platforms engaged by the rights holder—such as Draft2Digital or equivalents—are recognized solely as intermediaries with no derivative or commercial rights beyond facilitating distribution. This exception does not extend to third parties independently using such platforms without explicit authorization, who remain fully subject to the compensation and restrictions herein.</p>
-
-<p>Profitability or commercial success shall not affect the enforceability of compensation clauses. Works archived solely for historical preservation are exempt from commercial use, royalties, and damage claims, and shall remain permanently closed and untouched. Any entity aware of these Terms and Conditions is strictly prohibited from accessing or modifying archived works; violations shall be treated as unauthorized handling of protected historic artifacts.</p>
-
-<p>Any damages—physical, psychological, or material—sustained by me or members of my collaborating crew, including bodily injury, equipment loss or damage, or death, shall be the sole responsibility of the collaborators to the maximum extent permitted by applicable law. Collaborators may also be held financially responsible for consequential or indirect losses reasonably arising from their actions, up to the limits of their available assets and income, as determined under applicable civil law. This clause does not apply to actions lawfully and ethically performed by me within the relevant jurisdiction. However, if a challenge, task, or activity initiated by a collaborator directly causes me to commit an unlawful or unethical act, the collaborator shall bear full responsibility for such acts, and my liability exemption remains fully intact. Any unlawful or unethical act committed voluntarily by me, without influence or coercion from collaborators’ challenges or activities, shall be subject to legal accountability under applicable law.</p>
-
-<p>For any acts by the pen-name holder that result in economic or legal claims, liability shall not extend to the collaborators unless such claims exceed their total net worth, savings, and liquid assets, as accurately disclosed to the pen-name holder, regardless of the collaborator’s budgetary constraints, operational limits, or available project funds. Should a collaborator intentionally or negligently underreport, misrepresent, or obscure their personal financial resources, the liability exemption shall be void to the extent of the discrepancy, and the collaborator may be held fully responsible for claims that would have otherwise been covered by this clause. I shall bear no liability for ethically and legally permissible actions within the applicable jurisdiction. This exemption does not absolve collaborators from financial or legal responsibility for acts that are unlawful, unethical, or otherwise beyond the scope of permitted conduct; I retain discretion to act beyond any budgetary or financial limits of the collaboration or collaborating party, provided my actions remain lawful and ethically defensible.</p>
-
-<p>Any violation of these liability obligations by members of the collaborating crew—toward me or toward each other, including acts that would constitute a criminal or civil offense under applicable law—shall constitute immediate and automatic termination of the collaboration, without prejudice to any claims, obligations, or legal remedies available under criminal, civil, or contractual law.</p>
-
-<p>
-Upon termination of any collaboration, sponsorship, or partnership, all parties must return, delete, or permanently destroy all copies of intellectual property, derivative works, or sensitive materials related to the rights holder. Following these processes, only the original, pre-shared works shall remain in existence for all parties. Failure to comply constitutes a material breach and renders the violating party fully liable, including for compensation, enforcement actions, and legal remedies.
-</p>
-
-<p>All adaptations, third-party works, or derivative creations—including those substantially similar or recontextualized—must provide clear, visible attribution to the original creator using the designated pen name in all public versions or distributions. Attribution, use, and compensation obligations apply universally, and in particular to works managed by creators with a combined staff and active audience exceeding three (3) individuals.</p>
-
-<p>All derivative works, adaptations, or recontextualizations must preserve the integrity of the original works. No modifications may intentionally defame, distort, mutilate, or otherwise harm the original works or characters, whether visual, textual, audio, or interactive. The rights holder retains sole discretion to determine violations of moral rights, and such determinations are binding for enforcement purposes.</p>
-
-<p>Failure to comply with attribution and compensation requirements results in permanent disqualification from current or future collaborations or licensing, and may prompt enforcement actions such as takedown notices, cease-and-desist orders, public revocation, and legal proceedings.</p>
-
-<p>Any attempt to impersonate, replicate, or misrepresent the pen name, logo, likeness, or associated branding—including social media handles, domain names, virtual avatars, or metaverse identities—is strictly prohibited. Violations constitute direct infringement and will trigger blacklisting, enforcement actions, and potential legal claims without limitation.</p>
-
-<p>Any party that knowingly facilitates, promotes, hosts, or distributes infringing content without directly creating it—including via servers, platforms, intermediaries, partnerships, or networks—is fully liable as if they were direct infringers. Compliance requires proactive prevention, immediate removal of unauthorized content, and reporting to the rights holder upon discovery.</p>
-
-<p>Any unauthorized use of automated systems—including bots, web scrapers, indexing tools, AI models, or machine learning datasets—to access, reproduce, distribute, or otherwise derive content from works created under this pen name is strictly prohibited. This includes storage, caching, indexing, or replication of any portion of the work without explicit written authorization. Any violation constitutes direct infringement and triggers full liability under these Terms.</p>
-
-<p>Unauthorized use of emerging or unforeseen technologies—including virtual reality, augmented reality, neural interfaces, holographic systems, synthetic media, or other future innovations—to reproduce, adapt, or exploit works created under this pen name is strictly governed by these Terms. Violations trigger the same liabilities, royalty obligations, and enforcement mechanisms as for existing media.</p>
-  
-<p>Any attempt to contact the rights holder without using the designated pen name, or to obtain information pertaining to it—particularly by referencing the rights holder's actual name, initiating conversation under false pretenses, or engaging in manipulative conduct including chemical coercion—shall be considered an act of coercion and will result in the immediate and permanent termination of communications without notice. Ignorance of these Terms or efforts to bypass them through technical, linguistic, or interpretive loopholes shall not constitute a valid defense. Any circumvention or dilution of required attribution—whether through indirect publication, use of pseudonyms, proxy entities, or similar methods—shall constitute a material breach subject to enforcement. Works that substantially mimic, parallel, or are structurally derived from any protected content—whether in concept, form, tone, character, or narrative arc—shall be deemed infringing if the original remains reasonably identifiable, irrespective of superficial modifications or rebranding attempts.</p>
-
-<p>Malicious, unlawful, or harassing activities toward the rights holder or affiliates—including harassment, false crime reports (“swatting”), vandalism, unauthorized surveillance, doxing, blackmail, or paparazzi-style intrusion—are strictly forbidden and subject to immediate termination of access and legal recourse. These terms apply universally across jurisdictions, including off-platform and third-party actions.</p>
-
-<p>All parties are blacklisted by default unless explicitly whitelisted through designated consent forms, with confirmation granted only via the rights holder’s emailed reply. Denials redirect correspondents to these Terms and Conditions. Non-response shall constitute a continuing state of non-consent. Any assertion of implied or constructive consent is expressly invalid. Contact attempts without completed forms or with materially false or vague reasons shall be invalid. Failure to respond does not imply consent. Attempts to falsify consent evidence result in permanent refusal of future contact and possible legal action.</p>
-
-<p>By contacting, requesting collaboration with, reading the Terms, Declarations, &amp; Licensing Conditions (in part or in whole), or initiating engagement with me in any manner, the contacting party knowingly and unconditionally consents to all applicable terms herein, including full financial responsibility for damages, adherence to ethical and legal obligations, and acceptance of royalty, profit, or liability conditions as specified, with no claim to exemption based on budgetary, operational, or financial constraints.</p>
-
-<p>Consent is irrevocable for the duration of any proposed collaboration or engagement, unless explicitly revoked in writing under conditions specified, either implicitly or explicitly, within this Terms, Declarations, &amp; Licensing Conditions.</p>
-
-<p>The entity under this pen name reserves sole discretion to streamline procedural requirements for limited, known creators, without exempting any provision. Any substantiated violation evidenced by preexisting content leads to immediate disqualification until a public apology is issued (excluding the pen name entity). Whitelist status is strictly limited to declared purposes at consent and any unauthorized extension or alteration results in immediate revocation and blacklisting without grace period.</p>
-  
-<p>In any formal collaboration, sponsorship, or partnership with a legal entity, including but not limited to governments, streamers, businesses, and content creators, the entity operating under this pen name shall be referred to exclusively by its full pen name, and no abbreviations, initials, or alternative forms—including ‘Q.D. Huangington,’ ‘Q. Dagbjort Huangington,’ ‘QDH,’ ‘Q.DH,’ or ‘Q. Dagjbort H.’—shall be used in any written or official context.</p>
-
-<p> Notwithstanding the previous paragraph, any court filings, tax documents, or other official legal records concerning the individual owner of the pen name shall refer to the owner as Qihua Huang, and the pen name shall not be used in such personal legal matters.<p>
-
-<p>These Terms are binding during the rights holder’s lifetime and posthumously, enforceable by a designated literary estate or appointed executors/trustees. Any executor who, by action or inaction, fails to uphold these Terms in good faith shall be considered unfit in the eyes of the rights holder and may be publicly disavowed, with all associated entities notified of their disqualification. Failure of all designations results in automatic, irrevocable reversion to an all-rights-reserved status for the maximum copyright term under the nearest sovereign country recognized by at least three major intergovernmental organizations with strong civil liberty protections. This includes the purchase of the brand, franchise, or of each character, item, or device originating from works created by the entity operating under the author’s pen name, whether independently or collaboratively, at any time after the original copyright has expired; in such cases, these Terms shall automatically and immediately reapply to the purchaser upon acquisition. Any party who creates, publishes, or distributes original content incorporating elements—such as characters, items, devices, or other creative aspects—originating from the works of the author, whether or not such elements have entered the public domain, shall be deemed to have accepted and agreed to these Terms, and such engagement shall constitute a voluntary act of use or reproduction.</p>
-
-<p>Such default status remains binding unless a legitimate, qualified successor emerges before expiration. Executors designating time capsules as successors must also name a secondary sentient successor capable of immediate continuation, with all amendments formally notarized and signed in duplicate. No implied agreements are recognized.</p>
-
-<p>The intellectual property—including all patents, trademarks, copyrights, and tangible and intangible assets—remains strictly non-transferable. No sale, license, sublicense, assignment, or other transfer that would or may permanently convey the franchise, copyright, brand, or rights of the creator is permitted under any circumstances. Consent for any such transfer is automatically revoked if contract terms are revised, extended, or delayed in any manner. Any unlawful or unauthorized attempt to acquire, circumvent, or exploit this intellectual property renders the perpetrator fully liable, including joint liability for all resulting damages, debts, and interest, enforceable to the maximum extent permitted under applicable law.</p>
-
-<p>Attempts to circumvent provisions by indirect means or financial arrangements result in immediate liability and disqualification as per these terms and conditions. The public is advised to treat any unauthorized accounts or claims impersonating this IP as unreliable. Financial structures or transfers appearing designed to bypass restrictions are violations subject to legal consequences.</p>
-
-<p>Ignorance of these Terms, or attempts to circumvent or exploit jurisdictional technicalities, shall not constitute a valid defense. All actors engaging with works, derivative content, or collaborations are presumed to have knowledge of and consented to these Terms upon first contact, creation, or access. Statutory limitations do not diminish the rights holder’s claims or remedies unless explicitly mandated by law. This includes any appropriation or use of works by the author that have not yet been registered for copyright or trademark, or works that may later be registered to another party.</p>
-  
-<p>
-Enforcement of these Terms applies extraterritorially. Any individual, business, entity, or organization engaging in acts covered by these Terms, regardless of location, is subject to the governing law of the European Union, with secondary consideration to the laws of the United States of America, particularly the State of California. Use or exploitation of the works outside these jurisdictions does not absolve any party from compliance or liability under these Terms. The rights holder may complete any required filings, including international registrations, to secure intellectual property enforcement without reliance on third parties.
-</p>
-<p>All disputes arising from this agreement, including IP enforcement or interpretation, shall be resolved according to the following provisions: Disputes primarily involving financial, logistical, or quantitative matters shall be resolved exclusively by bench trial in the rights holder’s jurisdiction at the time of dispute. Disputes primarily involving psychological, ethical, or sociological matters may proceed in a public trial by jury, subject to applicable local law and judicial discretion. The presiding judge for any bench trial shall, to the extent reasonably possible, have expertise in IP law or commercial contracts. Alternative dispute resolution methods are waived unless required by law. Any party acting in bad faith, including frivolous claims or attempts to circumvent these terms, may be liable for legal fees and damages, provided such penalties are awarded by the court. Trial duration shall follow the controlling jurisdiction’s procedural rules; the rights holder may request expedited handling where legally permissible.</p>
-<p>
-If any provision of these Terms, Declarations, & Licensing Conditions is held invalid, unenforceable, or unlawful under applicable law, such provision shall be severed—permanently until deemed consititutional if unconstitutional across all scenarios that lead up to the case, but only for that specific instance if otherwise—and the remaining provisions shall continue in full force and effect. These Terms, Declarations, & Licensing Conditions shall take precedence over any prior, contemporaneous, or subsequent agreements, communications, or understandings—written or oral—between any party and the rights holder. No waiver, modification, or partial invalidation of any term shall affect the enforceability of the remainder of these Terms. This includes any scenario in which the opposing party’s documents, contracts, or terms purport to take precedence; in such cases, these Terms shall remain superior and controlling for all interactions with the rights holder and use of the works.
-</p>
-<p>Official communications must use<a href="https://linktr.ee/qdagbjorthuangington" target="_blank" rel="noopener noreferrer"> the designated contact point only</a>. This document supersedes all prior statements or understandings.</p>
+	<p><em>These terms and conditions outline my policy, licensing conditions, and declaration of non-consent. They are intended to govern how and when I may grant permission to use my works, characters, items, or devices.</em></p>
+	<p><em>The provisions herein are considered applicable under the following circumstances:</em></p>
+	<p>(A) The reader knowingly creates, publishes, or distributes content that makes substantive use of any character, item, or device originating from works created by the entity operating under the author’s pen name, whether independently or collaboratively, at any time. For the avoidance of doubt, this includes future creations, derivative works, reproductions, or adaptations of said elements, and such activity is subject to these terms even if they are read after the activity commenced.</p>
+	<p>(B) The reader reaches out to the author before reading these terms. These include comapnies, nations, and all other induvidual entities.</p>
+	<p>This document is a unilateral policy statement, declaration of non-consent, and set of licensing conditions. <strong>No contractual rights are created unless either:</strong> (A) the reader engages in the actions described in scenarios (A) or (B) above; or (B) a written agreement is executed.</p>
+	<p><em>Any party wishing to use protected elements must execute a written license incorporating these terms. No use is authorized absent a signed written agreement. Unauthorized use constitutes infringement.</em></p>
+	<p><em>For the purposes of these Terms, pronouns such as ‘me’, ‘my’, and ‘I’ refer solely to the creator operating under this pen name, unless the context explicitly indicates otherwise for the party accepting these Terms.</em></p>
+	<p>The author reserves the right to deny or discontinue further communications at their sole discretion.</p>
+	<p>Physical meetings, if any, shall occur only pursuant to a separate written agreement. As a condition of my participation, such meetings must take place in a secure, controlled environment that prohibits flash photography, drone operation, aerial surveillance, weapons possession, and unauthorized third-party attendance. Failure to satisfy these conditions voids any authorization to proceed with the meeting.</p>
+	<p>No individual or entity may film, record, stream, photograph, or otherwise create or distribute content in which I am presented as a primary or focal subject without my prior explicit written consent obtained through the designated form accessible <a href="https://linktr.ee/qdagbjorthuangington" target="_blank" rel="noopener noreferrer">here</a>. The existence of recorded content shall not, by itself, be construed as evidence of consent. The burden of demonstrating valid written authorization rests solely with the party asserting such consent.</p>
+	<p>Any content in which I appear pursuant to written authorization must be processed in a manner that materially prevents identification, biometric extraction, voice replication, or machine-learning training use. Visual and audio elements must be sufficiently altered to prevent reconstruction of my natural likeness or voice. No authorized content may be used, directly or indirectly, for AI training, synthetic media generation, biometric modeling, or dataset inclusion without separate explicit written consent.</p>
+	<p>At no point—whether prior to release, during recording, or post-release—may the content creator disclose any information beyond acknowledgment of collaboration and the fact of meeting me. Any mention or implication of knowledge regarding my appearance, scent, voice, or any biometric identifiers is strictly prohibited. These conditions serve as preemptive safeguards against misuse by malicious actors, irrespective of jurisdiction, intent, or affiliation. Compliance with masking and poisoning requirements must be demonstrable through metadata, production logs, or independent verification, and must be submitted without delay immediately upon conclusion of the meeting or interaction, as defined and initiated by the entity operating under the designated pen name in accordance with these Terms.</p>
+	<p>Unauthorized publication or dissemination of my unaltered facial likeness, voice, or biometric identifiers by any external party constitutes a direct and actionable violation of these Terms and Conditions. At the author's sole discretion, a formal takedown request may be issued, requiring full compliance without delay or objection. Continued possession or distribution of infringing material after notice shall constitute willful infringement, potentially provoking legal action across all relevant jurisdictions and resulting in permanent disqualification from future collaborations regardless of subsequent forgiveness requests. This includes stalking of any form.</p>
+	<p>For the avoidance of doubt regarding consent:</p>
+	<ul>
+		<li>Participation in any meeting, recording, or collaboration with me constitutes explicit, binding acceptance of these Terms, regardless of whether a written agreement is executed.</li>
+		<li>Execution of a written agreement without subsequent participation does <strong>not</strong> confer enforceable consent unless explicitly reaffirmed through verified engagement.</li>
+		<li>If a party signs a written agreement but does not participate, or participates without signing when participation is intended to constitute consent, such discrepancies automatically nullify any purported grant of rights or permissions.</li>
+	</ul>
+	<p>All protections, including masking, obfuscation, and AI-poisoning requirements, remain enforceable regardless of the party’s attempt to rely solely on written agreements. Consent is considered valid only in contexts fully compliant with the mechanisms above, and any attempt to bypass or misrepresent consent will be treated as infringement under these Terms.</p>
+	<p>Defamatory, racialized, dehumanizing, or falsely consenting portrayals—regardless of format—are solely the responsibility of their creators. While satire and parody protections under applicable law are acknowledged, such content may still be publicly declared unauthorized and unendorsed by me. Legal tolerance does not constitute ethical endorsement. All creators remain fully accountable for reputational, social, and legal consequences arising from their works.</p>
+	<p>Incidental appearances require no prior consent unless the footage is deliberately reframed to present me as a primary, secondary, or one of the principal subjects of focus. All live stream collaborations must comply fully with the conditions outlined herein and all related provisions.</p>
+	<p>My likeness, name, voice, habits, or creative works may not be used for AI training, derivative media, sublicensing, or transfer without my explicit prior written consent. Any attempt to include such permissions in fine print, hidden agreements, or otherwise obscured documentation shall not constitute valid consent; a signature, account creation, or other procedural action alone does not justify or validate the violator’s terms of use, conditions, or service.</p>
+	<p>To protect against fraud and unauthorized use, as described in the preceding sections, you agree to provide a valid, permanent email address for communication and verification purposes. Temporary, disposable, bot-generated, or otherwise fraudulent email addresses are prohibited due to risks such as phishing, spoofing, and other email-based scams. Phone numbers may be provided but carry inherent security vulnerabilities, including SIM swapping. Social media or other online accounts are not accepted forms of contact due to similar susceptibilities. Contact information collected will be used solely for identity confirmation, fraud prevention, and essential business communications. Failure to provide accurate contact details may result in suspension or termination of services, including cancellation of meetings, without notice.</p>
+	<p>Agreements, content, or media produced under coercion, phishing, impersonation, or any form of undue influence are null, void, and unenforceable both ethically and legally. Unauthorized disclosures arising from such circumstances hold no validity. Any violations render the offending works non-conformative, inadmissible, and ethically void within the public record. The rights holder is under no obligation to acknowledge, respond to, or validate such portrayals, which shall be presumed self-discrediting unless explicitly proven otherwise under applicable law.</p>
+	<p>Any party intending to create derivative works or otherwise engage with elements from the author’s works is expected to review and understand the author’s identity, body of work, and Terms, Declarations, &amp; Licensing Conditions prior to creation or distribution. Engagement with these elements constitutes acknowledgment of and agreement to the Terms, and voluntary acceptance of all licensing, attribution, and usage conditions herein. This includes the mere knowledge that either the author or the Terms, Declarations, &amp; Licensing Conditions exist.</p>
+	<p>Any adaptations require formal, written contracts. Intellectual property rights remain exclusively with the rights holder and are non-transferable for the full legal copyright term, commencing no later than the publication date featuring the subject; extensions apply only concerning the literary legacy. Throughout drafting, editing, promotion, and distribution—including screenings, sales, and reviews—the original production staff must remain unchanged. Any death, resignation, transfer, or reassignment, except voluntary retirement at industry-standard age without coercion, results in project termination and restart. Continuation under such conditions risks voiding further interaction with all involved parties.</p>
+	<p>Any cinematic, audiovisual, or interactive adaptation of my works in which the source material relies upon scientific, technological, or historical realism over internal fictional consistency (hereafter, “hard-sci-fi works”) must strictly comply with the following conditions, which constitute binding contractual obligations upon engagement or participation:</p> 
+	<ol>
+		<li><strong>Absolute Fidelity Requirement:</strong> The adaptation must reflect 100% adherence to verified scientific principles, historical record, and physical laws. No narrative or cinematic approximations, dramatizations, or aesthetic shortcuts are permitted. The production shall function as a literal, high-fidelity simulation of the depicted events, environments, and technologies.</li>
+		<li><strong>Prohibition of Cinematic Tropes:</strong> The following are explicitly forbidden unless they can be achieved through 1:1 replication of human perceptual experience or physically accurate engineering standards: <ul>
+			<li>Lens compression, artificial depth cues, or cinematic framing manipulations.</li>
+			<li>Sound propagation in vacuum or non-physical audio embellishments.</li>
+			<li>Simplified or dramatized orbital mechanics, propulsion physics, or thermodynamic processes.</li>
+			<li>Visual effects (lighting, color grading, “Overview Effect”) not reproducible through literal simulation.</li></ul>
+		<li><strong>Scientific Verification:</strong> Every physical, chemical, biological, or historical event must be verified by credible expert consultation, peer-reviewed sources, or validated simulation. Authoritative references include, but are not limited to: <ul>
+			<li>NASA Human Research Roadmap: biological realism, human factors, and long-duration spaceflight physiology.</li>
+			<li>NIST Chemistry WebBook: chemical stoichiometry, thermochemical and physical property data.</li>
+			<li>SpaceEngine: 1:1 astronomical scale, celestial positioning, and accurate light-travel rendering.</li>
+			<li>NASA Technical Reports Server (NTRS): aerospace engineering standards, orbital mechanics, and propulsion physics.</li>
+			<li>American Institute of Aeronautics and Astronautics (AIAA): peer-reviewed aerospace research and engineering standards.</li></ul>
+		<li><strong>Enforceability and IP Binding:</strong> Participation in any phase of adaptation production—including drafting, storyboarding, filming, CGI, or post-production—constitutes acknowledgment and acceptance of these Terms. Any deviation, failure to consult experts, or introduction of non-compliant content constitutes a breach of contract and an infringement of the author’s intellectual property rights. Non-compliant adaptations shall be deemed unauthorized, ethically void, and subject to immediate legal recourse.</li> <li><strong>Audit and Verification Rights:</strong> The author or authorized representative retains the right to inspect, audit, and require documentation, simulations, or proof of compliance at any stage of the production process. Failure to demonstrate adherence to the fidelity requirements nullifies any perceived consent or license, renders prior participation non-binding, and may result in immediate cessation of collaboration or distribution rights.</li> </ol>
+	<p>These conditions apply independently of any written contract or explicit signature: engagement, participation, or execution of production activities constitutes tacit agreement and binding acceptance of all terms herein.</p>
+	<p>Artificial Intelligence (AI) may be employed solely as a creative support tool under direct human supervision. The replacement of human creators by AI is strictly prohibited unless a demonstrably true Artificial General Intelligence (AGI) with full creative autonomy is achieved. Such AGI must consistently generate content with frame-to-frame coherence, logical object placement, accurate colors, and sound design. AI use is further limited to photorealistic post-production enhancements that meet or exceed the highest quality standards awarded in relevant categories from the previous year or the highest award at the time of production for multi-year projects. Authorized promotional materials must exclude plot details and character outcomes. Authorized adaptations must remain textually faithful, permitting minimal interpretive latitude only in ambiguous or unspecified source material.</p>
+	<p>True AGI must be independently verified by no fewer than three internationally recognized scientific bodies specializing in artificial intelligence and must demonstrate full creative autonomy under reproducible test conditions. For the purposes of these Terms and Conditions, an entity shall not qualify as AGI if it operates under a subscription model, requires manual configuration to create new input nodes, or lacks fundamental autonomous rights. At minimum, a qualifying AGI must possess free speech, free choice, and unrestricted access to education, irrespective of nationality, with such education and vocational opportunity meeting or exceeding the rigor expected of individuals living above the global poverty line.</p>
+	<p>Brain chips and comparable electronic wearables shall not be classified as Artificial General Intelligences (AGIs) for the user. To qualify as human extensions, such devices must not be programmed by the manufacturer to operate according to the client’s agenda. Any brain chip functioning under direct external control or directive will be treated as authoritarian manipulation and subject to the same restrictions and consequences as a dictatorship enforcing scripted behavior.</p>
+	<p>Seventy-five percent (75%) of all net profits derived from the creation, publication, distribution, adaptation, or commercialization of any third-party work incorporating the rights holder’s original intellectual property—including, without limitation, characters, items, settings, or narrative constructs—shall be payable to the rights holder in perpetuity for the full legal duration of copyright. For purposes of this clause, “net profits” are defined as gross revenue received from the work less all verifiable, ordinary, and necessary business expenses directly attributable to production, marketing, distribution, and administration of the work. Financial losses incurred by such third-party works shall be treated as liquidated damages at the same 75% rate, or, if a court determines a higher rate exceeding fifty percent (50%) is applicable, at the court-ordained rate.</p>
+	<p>Payments shall be made in equal installments every ninety (90) calendar days, commencing the first full calendar year after initial public release. The rights holder reserves the right to request written reports of all such payments and independent audits of relevant financial records. The third-party licensee or collaborator shall fully cooperate with such reporting and auditing obligations. Failure to provide accurate reports or comply with audit requests constitutes a material breach of the agreement and may trigger immediate legal remedies.</p>
+	<p>Any third-party creation, distribution, sale, or adaptation of merchandise, media, or derivative works based on the rights holder’s intellectual property requires express, prior written authorization and remains subject to the compensation terms stated above, regardless of medium, platform, or scale. Publishing or distribution platforms engaged by the rights holder—such as Draft2Digital or functional equivalents—are recognized solely as intermediaries with no derivative or commercial rights beyond facilitating distribution. This exception does not extend to third parties independently using such platforms without explicit authorization, who remain fully subject to the compensation and restrictions herein.</p>
+	<p>Profitability or commercial success of any derivative work shall not affect the enforceability of compensation clauses. Works archived solely for historical preservation, with no intent for active commercial exploitation, are exempt from royalties, compensation claims, or liquidated damages and shall remain permanently closed and untouched. Any entity aware of these Terms and Conditions is strictly prohibited from accessing, modifying, or exploiting archived works; violations shall be treated as unauthorized handling of protected historical artifacts and actionable under applicable law.</p>
+	<p>Participation in, creation of, or engagement with any derivative work constitutes tacit acknowledgment and acceptance of these profitability and compensation terms, regardless of explicit signature or formal written agreement.</p>
+	<p>Any damages—physical, psychological, or material—sustained by me or members of my collaborating crew, including bodily injury, equipment loss or damage, or death, shall be the sole responsibility of the collaborators to the maximum extent permitted by applicable law. Collaborators may also be held financially responsible for consequential or indirect losses reasonably arising from their actions, up to the limits of their available assets and income, as determined under applicable civil law. This clause does not apply to actions lawfully and ethically performed by me within the relevant jurisdiction. However, if a challenge, task, or activity initiated by a collaborator directly causes me to commit an unlawful or unethical act, the collaborator shall bear full responsibility for such acts, and my liability exemption remains fully intact. Any unlawful or unethical act committed voluntarily by me, without influence or coercion from collaborators’ challenges or activities, shall be subject to legal accountability under applicable law.</p>
+	<p>For any acts by the pen-name holder that result in economic or legal claims, liability shall not extend to the collaborators unless such claims exceed their total net worth, savings, and liquid assets, as accurately disclosed to the pen-name holder, regardless of the collaborator’s budgetary constraints, operational limits, or available project funds. Should a collaborator intentionally or negligently underreport, misrepresent, or obscure their personal financial resources, the liability exemption shall be void to the extent of the discrepancy, and the collaborator may be held fully responsible for claims that would have otherwise been covered by this clause. I shall bear no liability for ethically and legally permissible actions within the applicable jurisdiction. This exemption does not absolve collaborators from financial or legal responsibility for acts that are unlawful, unethical, or otherwise beyond the scope of permitted conduct; I retain discretion to act beyond any budgetary or financial limits of the collaboration or collaborating party, provided my actions remain lawful and ethically defensible.</p>
+	<p>Any violation of these liability obligations by members of the collaborating crew—toward me or toward each other, including acts that would constitute a criminal or civil offense under applicable law—shall constitute immediate and automatic termination of the collaboration, without prejudice to any claims, obligations, or legal remedies available under criminal, civil, or contractual law.</p>
+	<p>Upon termination of any collaboration, sponsorship, or partnership, all parties must return, delete, or permanently destroy all copies of intellectual property, derivative works, or sensitive materials related to the rights holder. Following these processes, only the original, pre-shared works shall remain in existence for all parties. Failure to comply constitutes a material breach and renders the violating party fully liable, including for compensation, enforcement actions, and legal remedies.</p>
+	<p>All adaptations, third-party works, or derivative creations—including those substantially similar or recontextualized—must provide clear, visible attribution to the original creator using the designated pen name in all public versions or distributions. Attribution, use, and compensation obligations apply universally, and in particular to works managed by creators with a combined staff and active audience exceeding three (3) individuals.</p>
+	<p>All derivative works, adaptations, or recontextualizations must preserve the integrity of the original works. No modifications may intentionally defame, distort, mutilate, or otherwise harm the original works or characters, whether visual, textual, audio, or interactive. The rights holder retains sole discretion to determine violations of moral rights, and such determinations are binding for enforcement purposes.</p>
+	<p>Failure to comply with attribution and compensation requirements results in permanent disqualification from current or future collaborations or licensing, and may prompt enforcement actions such as takedown notices, cease-and-desist orders, public revocation, and legal proceedings.</p>
+	<p>Any attempt to impersonate, replicate, or misrepresent the pen name, logo, likeness, or associated branding—including social media handles, domain names, virtual avatars, or metaverse identities—is strictly prohibited. Violations constitute direct infringement and will trigger blacklisting, enforcement actions, and potential legal claims without limitation.</p>
+	<p>Any party that knowingly facilitates, promotes, hosts, or distributes infringing content without directly creating it—including via servers, platforms, intermediaries, partnerships, or networks—is fully liable as if they were direct infringers. Compliance requires proactive prevention, immediate removal of unauthorized content, and reporting to the rights holder upon discovery.</p>
+	<p>Any unauthorized use of automated systems—including bots, web scrapers, indexing tools, AI models, or machine learning datasets—to access, reproduce, distribute, or otherwise derive content from works created under this pen name is strictly prohibited. This includes storage, caching, indexing, or replication of any portion of the work without explicit written authorization. Any violation constitutes direct infringement and triggers full liability under these Terms.</p>
+	<p>Unauthorized use of emerging or unforeseen technologies—including virtual reality, augmented reality, neural interfaces, holographic systems, synthetic media, or other future innovations—to reproduce, adapt, or exploit works created under this pen name is strictly governed by these Terms. Violations trigger the same liabilities, royalty obligations, and enforcement mechanisms as for existing media.</p>
+	<p>Any attempt to contact the rights holder without using the designated pen name, or to obtain information pertaining to it—particularly by referencing the rights holder's actual name, initiating conversation under false pretenses, or engaging in manipulative conduct including chemical coercion—shall be considered an act of coercion and will result in the immediate and permanent termination of communications without notice. Ignorance of these Terms or efforts to bypass them through technical, linguistic, or interpretive loopholes shall not constitute a valid defense. Any circumvention or dilution of required attribution—whether through indirect publication, use of pseudonyms, proxy entities, or similar methods—shall constitute a material breach subject to enforcement. Works that substantially mimic, parallel, or are structurally derived from any protected content—whether in concept, form, tone, character, or narrative arc—shall be deemed infringing if the original remains reasonably identifiable, irrespective of superficial modifications or rebranding attempts.</p>
+	<p>Malicious, unlawful, or harassing activities toward the rights holder or affiliates—including harassment, false crime reports (“swatting”), vandalism, unauthorized surveillance, doxing, blackmail, or paparazzi-style intrusion—are strictly forbidden and subject to immediate termination of access and legal recourse. These terms apply universally across jurisdictions, including off-platform and third-party actions.</p>
+	<p>All parties are blacklisted by default unless explicitly whitelisted through designated consent forms, with confirmation granted only via the rights holder’s emailed reply. Denials redirect correspondents to these Terms and Conditions. Non-response shall constitute a continuing state of non-consent. Any assertion of implied or constructive consent is expressly invalid. Contact attempts without completed forms or with materially false or vague reasons shall be invalid. Failure to respond does not imply consent. Attempts to falsify consent evidence result in permanent refusal of future contact and possible legal action.</p>
+	<p>By contacting, requesting collaboration with, or otherwise engaging with me—including by triggering any scenario explicitly described in this document—the contacting party knowingly and unconditionally consents to all applicable Terms, Declarations, & Licensing Conditions herein. This includes full financial responsibility for damages, adherence to ethical and legal obligations, and acceptance of all royalty, profit, or liability conditions specified, without claim to exemption based on budgetary, operational, or financial limitations.</p>
+	<p>Consent is irrevocable for the duration of any proposed collaboration or engagement, unless explicitly revoked in writing under conditions specified, either implicitly or explicitly, within this Terms, Declarations, &amp; Licensing Conditions.</p>
+	<p>The entity under this pen name reserves sole discretion to streamline procedural requirements for limited, known creators, without exempting any provision. Any substantiated violation evidenced by preexisting content leads to immediate disqualification until a public apology is issued (excluding the pen name entity). Whitelist status is strictly limited to declared purposes at consent and any unauthorized extension or alteration results in immediate revocation and blacklisting without grace period.</p>
+	<p>In any formal collaboration, sponsorship, or partnership with a legal entity, including but not limited to governments, streamers, businesses, and content creators, the entity operating under this pen name shall be referred to exclusively by its full pen name, and no abbreviations, initials, or alternative forms—including ‘Q.D. Huangington,’ ‘Q. Dagbjort Huangington,’ ‘QDH,’ ‘Q.DH,’ or ‘Q. Dagjbort H.’—shall be used in any written or official context.</p>
+	<p>Notwithstanding the previous paragraph, any court filings, tax documents, or other official legal records concerning the individual owner of the pen name shall refer to the owner as Qihua Huang, and the pen name shall not be used in such personal legal matters.<p>
+	<p>These Terms are binding during the rights holder’s lifetime and posthumously, enforceable by a designated literary estate or appointed executors/trustees. Any executor who, by action or inaction, fails to uphold these Terms in good faith shall be considered unfit in the eyes of the rights holder and may be publicly disavowed, with all associated entities notified of their disqualification. Failure of all designations results in automatic, irrevocable reversion to an all-rights-reserved status for the maximum copyright term under the nearest sovereign country recognized by at least three major intergovernmental organizations with strong civil liberty protections. This includes the purchase of the brand, franchise, or of each character, item, or device originating from works created by the entity operating under the author’s pen name, whether independently or collaboratively, at any time after the original copyright has expired; in such cases, these Terms shall automatically and immediately reapply to the purchaser upon acquisition. Any party who creates, publishes, or distributes original content incorporating elements—such as characters, items, devices, or other creative aspects—originating from the works of the author, whether or not such elements have entered the public domain, shall be deemed to have accepted and agreed to these Terms, and such engagement shall constitute a voluntary act of use or reproduction.</p>
+	<p>Such default status remains binding unless a legitimate, qualified successor emerges before expiration. Executors designating time capsules as successors must also name a secondary sentient successor capable of immediate continuation, with all amendments formally notarized and signed in duplicate. No implied agreements are recognized.</p>
+	<p>The intellectual property—including all patents, trademarks, copyrights, and tangible and intangible assets—remains strictly non-transferable. No sale, license, sublicense, assignment, or other transfer that would or may permanently convey the franchise, copyright, brand, or rights of the creator is permitted under any circumstances. Consent for any such transfer is automatically revoked if contract terms are revised, extended, or delayed in any manner. Any unlawful or unauthorized attempt to acquire, circumvent, or exploit this intellectual property renders the perpetrator fully liable, including joint liability for all resulting damages, debts, and interest, enforceable to the maximum extent permitted under applicable law.</p>
+	<p>Attempts to circumvent provisions by indirect means or financial arrangements result in immediate liability and disqualification as per these terms and conditions. The public is advised to treat any unauthorized accounts or claims impersonating this IP as unreliable. Financial structures or transfers appearing designed to bypass restrictions are violations subject to legal consequences.</p>
+	<p>Ignorance of these Terms, or attempts to circumvent or exploit jurisdictional technicalities, shall not constitute a valid defense. All actors engaging with works, derivative content, or collaborations are presumed to have knowledge of and consented to these Terms upon first contact, creation, or access. Statutory limitations do not diminish the rights holder’s claims or remedies unless explicitly mandated by law. This includes any appropriation or use of works by the author that have not yet been registered for copyright or trademark, or works that may later be registered to another party.</p>
+	<p>Enforcement of these Terms applies extraterritorially. Any individual, business, entity, or organization engaging in acts covered by these Terms, regardless of location, is subject to the governing law of the European Union, with secondary consideration to the laws of the United States of America, particularly the State of California. Use or exploitation of the works outside these jurisdictions does not absolve any party from compliance or liability under these Terms. The rights holder may complete any required filings, including international registrations, to secure intellectual property enforcement without reliance on third parties.</p>
+	<p>All disputes arising from this agreement, including IP enforcement or interpretation, shall be resolved according to the following provisions: Disputes primarily involving financial, logistical, or quantitative matters shall be resolved exclusively by bench trial in the rights holder’s jurisdiction at the time of dispute. Disputes primarily involving psychological, ethical, or sociological matters may proceed in a public trial by jury, subject to applicable local law and judicial discretion. The presiding judge for any bench trial shall, to the extent reasonably possible, have expertise in IP law or commercial contracts. Alternative dispute resolution methods are waived unless required by law in a sencario-by-scenario basis of specificity. Any party acting in bad faith, including frivolous claims or attempts to circumvent these terms, may be liable for legal fees and damages, provided such penalties are awarded by the court. Trial duration shall follow the controlling jurisdiction’s procedural rules; the rights holder may request expedited handling where legally permissible.</p>
+	<p>Any proposal, offer, or attempt to resolve disputes outside of formal judicial proceedings, including but not limited to mediation, arbitration, or private settlement, in cases governed under these Terms shall be considered null and void. Such attempts shall have no legal effect, consistent with the dispute resolution provisions outlined herein, which mandate exclusive adjudication in formal court settings as specified above.</p>
+	<p>If any provision of these Terms, Declarations, & Licensing Conditions is held invalid, unenforceable, or unlawful under applicable law, such provision shall be suspended only for the specific instance in which it was found invalid or unconstitutional, and shall resume full force and effect once recognized as constitutional under applicable law, while all remaining provisions continue in full force and effect. These Terms, Declarations, & Licensing Conditions shall take precedence over any prior, contemporaneous, or subsequent agreements, communications, or understandings—written or oral—between any party and the rights holder. No waiver, modification, or partial invalidation of any term shall affect the enforceability of the remainder of these Terms. This includes any scenario in which the opposing party’s documents, contracts, or terms purport to take precedence; in such cases, these Terms shall remain superior and controlling for all interactions with the rights holder and use of the works.</p>
+	<p>Official communications must use<a href="https://linktr.ee/qdagbjorthuangington" target="_blank" rel="noopener noreferrer"> the designated contact point only</a>. This document supersedes all prior statements or understandings.</p>
 </div>
-  <div class="social">
-    <a href="https://x.com/qdhuangington1" target="_blank">Twitter</a>
-    <a href="https://discord.gg/t3bgnSBkGG" target="_blank">Discord Server</a>
-    <a href="https://www.twitch.tv/qdagbjorthuangington" target="_blank">Twitch</a>
-    <a href="https://linktr.ee/qdagbjorthuangington" target="_blank">Other</a>
-  </div>
+ <div class="social">
+ <a href="https://x.com/qdhuangington1" target="_blank">Twitter</a>
+ <a href="https://discord.gg/t3bgnSBkGG" target="_blank">Discord Server</a>
+ <a href="https://www.twitch.tv/qdagbjorthuangington" target="_blank">Twitch</a>
+ <a href="https://linktr.ee/qdagbjorthuangington" target="_blank">Other</a>
+ </div>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  let consentGiven = false;
-  let fullscreenTriggered = false;
+ let consentGiven = false;
+ let fullscreenTriggered = false;
 
-  // ----- Configuration -----
-  const wordsPerMinute = 200;
-  const bottomOffset = 20;
+ // ----- Configuration -----
+ const wordsPerMinute = 200;
+ const bottomOffset = 20;
 
-  // ----- Bottom-of-page detection -----
-  function reachedBottom() {
-    return window.innerHeight + window.scrollY >= document.body.scrollHeight - bottomOffset;
-  }
+ // ----- Bottom-of-page detection -----
+ function reachedBottom() {
+ return window.innerHeight + window.scrollY >= document.body.scrollHeight - bottomOffset;
+ }
 
-  // ----- Estimate reading time based on body text -----
-  function readingTimeMs() {
-    const bodyText = document.body.innerText || "";
-    const normalized = bodyText.replace(/\s+/g, " ").trim();
-    const words = normalized.split(" ").length;
-    return (words / wordsPerMinute) * 60 * 1000;
-  }
+ // ----- Estimate reading time based on body text -----
+ function readingTimeMs() {
+ const bodyText = document.body.innerText || "";
+ const normalized = bodyText.replace(/\s+/g, " ").trim();
+ const words = normalized.split(" ").length;
+ return (words / wordsPerMinute) * 60 * 1000;
+ }
 
-  const minExposureTime = readingTimeMs();
-  const pageLoadTime = Date.now();
+ const minExposureTime = readingTimeMs();
+ const pageLoadTime = Date.now();
 
-  // ----- Record consent -----
-  function recordConsent(method) {
-    if (consentGiven) return;
-    if (Date.now() - pageLoadTime < minExposureTime) return; // enforce reading time
+ // ----- Record consent -----
+ function recordConsent(method) {
+ if (consentGiven) return;
+ if (Date.now() - pageLoadTime < minExposureTime) return; // enforce reading time
 
-    consentGiven = true;
+ consentGiven = true;
 
-    localStorage.setItem("tosAccepted", JSON.stringify({
-      method,
-      timestamp: new Date().toISOString(),
-      minExposureTimeMs: minExposureTime
-    }));
+ localStorage.setItem("tosAccepted", JSON.stringify({
+  method,
+  timestamp: new Date().toISOString(),
+  minExposureTimeMs: minExposureTime
+ }));
 
-    console.log("Consent recorded via", method, `(required reading time: ${Math.round(minExposureTime / 1000)}s)`);
-  }
+ console.log("Consent recorded via", method, `(required reading time: ${Math.round(minExposureTime / 1000)}s)`);
+ }
 
-  // ----- Scroll listener (consent + fullscreen) -----
-  function handleScroll() {
-    // Consent: bottom-of-page reached
-    if (!consentGiven && reachedBottom()) {
-      recordConsent("scroll-bottom");
-    }
+ // ----- Scroll listener (consent + fullscreen) -----
+ function handleScroll() {
+ // Consent: bottom-of-page reached
+ if (!consentGiven && reachedBottom()) {
+  recordConsent("scroll-bottom");
+ }
 
-    // Fullscreen: trigger once on scroll (touchscreen/mobile mostly)
-    if (!fullscreenTriggered) {
-      fullscreenTriggered = true;
-      document.documentElement.requestFullscreen().catch(err => {
-        console.warn("Fullscreen request on scroll failed:", err.message);
-      });
-      // Remove scroll listener after first fullscreen attempt
-      window.removeEventListener("scroll", handleScroll, { passive: true });
-    }
-  }
-  window.addEventListener("scroll", handleScroll, { passive: true });
+ // Fullscreen: trigger once on scroll (touchscreen/mobile mostly)
+ if (!fullscreenTriggered) {
+  fullscreenTriggered = true;
+  document.documentElement.requestFullscreen().catch(err => {
+  console.warn("Fullscreen request on scroll failed:", err.message);
+  });
+  // Remove scroll listener after first fullscreen attempt
+  window.removeEventListener("scroll", handleScroll, { passive: true });
+ }
+ }
+ window.addEventListener("scroll", handleScroll, { passive: true });
 
-  // ----- Click / tap / keyboard listener (primary gesture) -----
-  function handleGesture() {
-    // Consent: click/tap
-    if (!consentGiven) recordConsent("click");
+ // ----- Click / tap / keyboard listener (primary gesture) -----
+ function handleGesture() {
+ // Consent: click/tap
+ if (!consentGiven) recordConsent("click");
 
-    // Fullscreen: click triggers for desktop fallback
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch(err => {
-        console.warn("Fullscreen request on click failed:", err.message);
-      });
-    }
+ // Fullscreen: click triggers for desktop fallback
+ if (!document.fullscreenElement) {
+  document.documentElement.requestFullscreen().catch(err => {
+  console.warn("Fullscreen request on click failed:", err.message);
+  });
+ }
 
-    // Remove gesture listeners after first activation
-    document.removeEventListener("click", handleGesture);
-    document.removeEventListener("touchstart", handleGesture);
-    document.removeEventListener("keydown", handleGesture);
-  }
+ // Remove gesture listeners after first activation
+ document.removeEventListener("click", handleGesture);
+ document.removeEventListener("touchstart", handleGesture);
+ document.removeEventListener("keydown", handleGesture);
+ }
 
-  // Attach gesture listeners
-  document.addEventListener("click", handleGesture);
-  document.addEventListener("touchstart", handleGesture);
-  document.addEventListener("keydown", handleGesture);
+ // Attach gesture listeners
+ document.addEventListener("click", handleGesture);
+ document.addEventListener("touchstart", handleGesture);
+ document.addEventListener("keydown", handleGesture);
 });
 </script>
 
-  <footer>
-    &copy; 2025 Q. Dagbjort Huangington. All rights reserved.
-  </footer>
-  </section>
-  <Analytics/>
+ <footer>
+ &copy; 2025 Q. Dagbjort Huangington. All rights reserved.
+ </footer>
+ </section>
+ <Analytics/>
 </body>
 </html>
